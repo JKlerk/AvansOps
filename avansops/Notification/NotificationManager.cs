@@ -1,16 +1,23 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AvansOps {
-	public class NotificationManager {
-		public void Notifiy(ref Role role, ref Project project, ref string message) {
+	public static class NotificationManager {
+		
+		public static void Notify(List<Role> roles, Project project, string message) {
+			foreach (var member in project.GetCurrentSprint().ProjectMembers)
+			{
+				if (member.Roles.Any(x => roles.Any(y => x == y)))
+				{
+					member.NotificationStrategy.Notify(member, message);
+				}
+			}
+		}
+		
+		public static void Notify(ProjectMember projectMember, string message) {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		public void Notify(ref ProjectMember projectMember, ref string message) {
-			throw new System.NotImplementedException("Not implemented");
-		}
-
-		private Pipeline pipeline;
-
 	}
 
 }

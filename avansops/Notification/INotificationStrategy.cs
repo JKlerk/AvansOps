@@ -1,10 +1,9 @@
 using System;
 
 namespace AvansOps {
-	public abstract class INotificationStrategy {
-		public void Notifiy(ref ProjectMember projectMember, ref string message) {
-			throw new System.NotImplementedException("Not implemented");
-		}
+	public abstract class INotificationStrategy
+	{
+		public abstract void Notify(ProjectMember projectMember, string message);
 
 		private ProjectMember projectMember;
 

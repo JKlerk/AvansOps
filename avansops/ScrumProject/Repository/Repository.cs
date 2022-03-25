@@ -1,7 +1,21 @@
 using System;
+using System.Collections.Generic;
 
 namespace AvansOps {
 	public class Repository {
+		private List<Pipeline> pipelines;
+		private List<Commit> commits;
+		private Project project;
+
+
+		public Repository(Project project)
+		{
+			this.project = project;
+			pipelines = new List<Pipeline>();
+			commits = new List<Commit>();
+
+		}
+
 		public void Commit(ref Commit commit) {
 			throw new System.NotImplementedException("Not implemented");
 		}
@@ -17,11 +31,6 @@ namespace AvansOps {
 		public bool IsAPipelineRunning() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-
-		private Pipeline pipeline;
-		private Commit commit;
-		private Project project;
-
 	}
 
 }

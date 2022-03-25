@@ -1,29 +1,48 @@
 using System;
+using System.Collections.Generic;
 
 namespace AvansOps {
 	public class SprintPhase {
-		private int id;
-		private string name;
-		private SprintBackLogItem[] sprintBackLogItems;
-		private Role[] rolesAuthorized;
+		public int Id { get; }
+		public string Name { get; }
+		private List<SprintBackLogItem> sprintBackLogItems;
+		private List<Role> rolesAuthorized;
 
-		public SprintPhase(ref string name, ref Role[] rolesAuthorised, ref StrategyPlaceItem[] strategiesPlaceItem) {
-			throw new System.NotImplementedException("Not implemented");
+		private List<StrategyPlaceItem> strategiesPlaceItem;
+
+		public SprintPhase(int id, string name, List<Role> rolesAuthorized)
+		{
+			Id = id;
+			Name = name;
+			this.rolesAuthorized = rolesAuthorized;
+			strategiesPlaceItem = new List<StrategyPlaceItem>();
+			sprintBackLogItems = new List<SprintBackLogItem>();
 		}
-		public void PlaceItem(ref SprintBackLogItem sprintBackLogItem) {
-			throw new System.NotImplementedException("Not implemented");
+		public void PlaceItem(SprintBackLogItem sprintBackLogItem, SprintPhase? fromSprintPhase) {
+			sprintBackLogItems.Add(sprintBackLogItem);
+			foreach (var strategyPlaceItem in strategiesPlaceItem)
+			{
+				strategyPlaceItem.OnPlace(sprintBackLogItem, fromSprintPhase);
+			}
 		}
-		public void RemoveItem() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public Role[] GetRolesAuthorized() {
-			return this.rolesAuthorized;
+		public void RemoveItem(SprintBackLogItem item)
+		{
+			sprintBackLogItems.Remove(item);
 		}
 
-		private StrategyPlaceItem strategyPlaceItem;
+		public List<SprintBackLogItem> GetSprintBackLogItems()
+		{
+			return sprintBackLogItems;
+		}
 
-		private Project[] projects;
-
+		public void AddStrategyPlaceItem(StrategyPlaceItem strategyPlaceItem)
+		{
+			strategiesPlaceItem.Add(strategyPlaceItem);
+		}
+		
+		
+		public List<Role> GetRolesAuthorized() {
+			return rolesAuthorized;
+		}
 	}
-
 }

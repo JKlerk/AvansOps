@@ -1,58 +1,104 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AvansOps {
 	public class Project {
 		private int id;
-		private string name;
+		public string Name { get; }
 		private string description;
-		private BackLogItem backLogItem;
+		private List<BackLogItem> backLogItems;
 		private Repository repository;
-		private Sprint sprint;
-		private ProjectMember projectMember;
-		private SprintPhase sprintPhase;
+		private List<Sprint> sprints;
+		private List<SprintPhase> sprintPhases;
+		private ProjectMember creator;
 
-		public Project(int id, string name, string description, BackLogItem backLogItem, Repository repository, Sprint sprint, ProjectMember projectMember, SprintPhase sprintPhase)
+		public Project(int id, string name, string description, ProjectMember creator)
 		{
 			this.id = id;
-			this.name = name;
+			this.Name = name;
 			this.description = description;
-			this.backLogItem = backLogItem;
-			this.repository = repository;
-			this.sprint = sprint;
-			this.projectMember = projectMember;
-			this.sprintPhase = sprintPhase;
+			this.creator = creator;
+			backLogItems = new List<BackLogItem>();
+			sprints = new List<Sprint>();
+			sprintPhases = new List<SprintPhase>();
+			repository = new Repository(this);
 		}
 
-		public void NotifyRole(ref Role role) {
+		public void NotifyRole(Role role) {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		public void AddBackLogItem(ref BackLogItem backLogItem) {
+		public void AddBackLogItem(BackLogItem backLogItem) {
+			backLogItems.Add(backLogItem);
+		}
+		public Sprint AddSprint(SprintType sprintType, DateTime start, DateTime end, ProjectMember creator)
+		{
+			SprintFactory sprintFactory = new SprintFactory();
+			var sprint = sprintFactory.CreateSprint(sprintType, start, end, creator);
+			sprints.Add(sprint);
+			return sprint;
+		}
+		public SprintBackLogItem AddBackLogItemToSprintBackLog(BackLogItem backLogItem, Sprint sprint) {
+			SprintBackLogItem item = sprint.AddSprintBacklogItem(backLogItem);
+			sprintPhases[0].PlaceItem(item, null);
+			return item;
+		}
+		
+		public void AddPhase(SprintPhase phase) {
+			sprintPhases.Add(phase);
+		}
+
+		public List<SprintPhase> GetPhases()
+		{
+			return sprintPhases;
+		}
+
+		public SprintPhase GetPhase(string name)
+		{
+			return sprintPhases.First(x => x.Name.ToLower() == name.ToLower());
+		}
+		
+		public SprintPhase GetPhase(int id)
+		{
+			return sprintPhases.First(x => x.Id == id);
+		}
+		
+
+		public void MoveSprintBackLogItemToPhase(ProjectMember projectMember, SprintBackLogItem sprintBackLogItem, SprintPhase phase) {
+			if (!phase.GetRolesAuthorized().Any(x => projectMember.Roles.Any(y => y == x)))
+			{
+				Console.WriteLine("Not authorized");
+				return;
+			}
+
+			SprintPhase sprintPhaseFrom = null;
+			
+			foreach (var x in sprintPhases.Where(x => x.GetSprintBackLogItems().Contains(sprintBackLogItem)))
+			{
+				sprintPhaseFrom = x;
+				x.RemoveItem(sprintBackLogItem);
+			}
+			
+			phase.PlaceItem(sprintBackLogItem, sprintPhaseFrom);
+		}
+		
+		public void UploadReviewDoc(Sprint sprint) {
 			throw new System.NotImplementedException("Not implemented");
 		}
-		public void AddSprint() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void AddBackLogItemToSprintBackLog(ref BackLogItem backLogItem, ref Sprint sprint) {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		private void CreateSprintBackLogItem(ref BackLogItem backLogItem) {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void AddPhase(ref SprintPhase phase) {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void MoveSprintBackLogItemToPhase(ref ProjectMember projectMember, ref SprintBackLogItem sprintBackLogItem, ref SprintPhase phase) {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void UploadReviewDoc(ref Sprint sprint) {
-			throw new System.NotImplementedException("Not implemented");
-		}
+		
 		public void StartPipelineCurrentSprint() {
 			throw new System.NotImplementedException("Not implemented");
 		}
+		
 		public void FinishCurrentSprint() {
 			throw new System.NotImplementedException("Not implemented");
 		}
+
+		public Sprint GetCurrentSprint()
+		{
+			return sprints.First(sprint => sprint.SprintState == SprintState.OnGoing);
+		}
+		
 	}
 
 }

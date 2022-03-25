@@ -2,12 +2,16 @@ using System;
 
 namespace AvansOps {
 	public class User {
-		private string firstName;
-		private string lastName;
-		private string email;
+		private string FirstName { get; }
+		private string LastName { get; }
+		private string Email { get; }
 
-		private ProjectMember projectMember;
-
+		public User(string firstName, string lastName, string email)
+		{
+			FirstName = firstName;
+			LastName = lastName;
+			Email = email;
+		}
 	}
 
 }

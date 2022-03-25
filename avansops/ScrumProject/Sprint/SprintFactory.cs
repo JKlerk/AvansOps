@@ -2,8 +2,11 @@ using System;
 
 namespace AvansOps {
 	public class SprintFactory {
-		public Sprint CreateSprint(ref SprintType sprintType) {
-			throw new System.NotImplementedException("Not implemented");
+		public Sprint CreateSprint(SprintType sprintType, DateTime start, DateTime end, ProjectMember creator)
+		{
+			Sprint sprint = new Sprint(1, sprintType, start, end);
+			sprint.ProjectMembers.Add(creator);
+			return sprint;
 		}
 
 	}

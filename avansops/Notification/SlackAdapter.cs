@@ -7,9 +7,9 @@ namespace AvansOps {
 
 		private SlackNotification slackNotification;
 
-		public SlackAdapter(SlackService slackService)
+		public SlackAdapter()
 		{
-			this.slackService = slackService;
+			slackService = new SlackService();
 		}
 		
 		

@@ -1,22 +1,19 @@
 using System;
+using System.Collections.Generic;
 
 namespace AvansOps {
 	public class ProjectMember {
-		public void SetRole(ref Role role) {
-			throw new System.NotImplementedException("Not implemented");
+		public INotificationStrategy NotificationStrategy { get; }
+		public User User { get; }
+		
+		public List<Role> Roles { get; set; }
+
+		public ProjectMember(User user, List<Role> roles, INotificationStrategy notificationStrategy)
+		{
+			User = user;
+			Roles = roles;
+			NotificationStrategy = notificationStrategy;
 		}
-
-		private User user;
-		private INotificationStrategy iNotificationStrategy;
-		private Sprint sprint;
-		private Role role;
-
-		private Commit commit;
-		private ThreadMessage threadMessage;
-		private BackLogItem backLogItem;
-		private BackLogItemActivity backLogItemActivity;
-		private Project[] projects;
-
 	}
 
 }

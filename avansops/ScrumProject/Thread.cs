@@ -6,6 +6,10 @@ namespace AvansOps {
 		private string name;
 		private string description;
 		private ProjectMember creator;
+		
+		private ThreadMessage threadMessage;
+
+		private BackLogItem[] backLogItems;
 
 		public void CreateMessage(ref string message, ref ProjectMember projectMember) {
 			throw new System.NotImplementedException("Not implemented");
@@ -16,11 +20,6 @@ namespace AvansOps {
 		public string GetDescription() {
 			return this.description;
 		}
-
-		private ThreadMessage threadMessage;
-
-		private BackLogItem[] backLogItems;
-
 	}
 
 }

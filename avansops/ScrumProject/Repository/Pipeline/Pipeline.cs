@@ -2,8 +2,17 @@ using System;
 
 namespace AvansOps {
 	public class Pipeline : IPipelinePhaseSubscriber  {
+		
+		private IPipelinePhase iPipelinePhase;
+		private Repository repository;
+
 		private bool isRunning;
 		private int indexCurrentPhase;
+
+		public Pipeline(Repository repository)
+		{
+			this.repository = repository;
+		}
 
 		public void RunPipeline() {
 			throw new System.NotImplementedException("Not implemented");
@@ -20,12 +29,6 @@ namespace AvansOps {
 		public bool IsRunning() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-
-		private IPipelinePhase iPipelinePhase;
-		private Repository repository;
-		private NotificationManager notificationManager;
-
-		private Repository[] repositorys;
 
 	}
 

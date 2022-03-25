@@ -6,6 +6,10 @@ namespace AvansOps {
 			throw new System.NotImplementedException("Not implemented");
 		}
 
+		public override void OnPlace(SprintBackLogItem sprintBacklogItem, SprintPhase fromSprintPhase)
+		{
+			throw new NotImplementedException();
+		}
 	}
 
 }

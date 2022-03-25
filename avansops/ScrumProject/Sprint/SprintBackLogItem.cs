@@ -3,21 +3,20 @@ using System;
 namespace AvansOps {
 	public class SprintBackLogItem {
 		private int id;
+		
+		public Sprint Sprint { get; }
+		public BackLogItem BackLogItem { get; }
 
-		public BackLogItem GetBackLogItem() {
-			throw new System.NotImplementedException("Not implemented");
+		public SprintBackLogItem(int id, Sprint sprint, BackLogItem backLogItem)
+		{
+			this.id = id;
+			Sprint = sprint;
+			BackLogItem = backLogItem;
 		}
-		public Sprint GetSprint() {
-			throw new System.NotImplementedException("Not implemented");
-		}
+		
 		public void SetToDone() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-
-		private Sprint sprint;
-		private BackLogItem backLogItem;
-
-		private Sprint[] sprints;
 
 	}
 

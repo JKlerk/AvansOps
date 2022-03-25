@@ -4,7 +4,7 @@ namespace AvansOps {
 	public enum SprintState {
 		Canceled,
 		Finished,
-
+		OnGoing,
 	}
 
 }

@@ -6,6 +6,18 @@ namespace AvansOps {
 		private string name;
 		private string description;
 
+		private ProjectMember? projectMember;
+		private BackLogItemActivity[]? backLogItemActivity;
+		private Thread[]? threads;
+		private SprintBackLogItem[]? sprintBackLogItem;
+
+		public BackLogItem(int id, string name, string description)
+		{
+			this.id = id;
+			this.name = name;
+			this.description = description;
+		}
+
 		public void CreateThread(ref ProjectMember projectMember, ref string name, ref object description) {
 			throw new System.NotImplementedException("Not implemented");
 		}
@@ -39,13 +51,6 @@ namespace AvansOps {
 		public void SetToDone() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-
-		private ProjectMember projectMember;
-		private BackLogItemActivity backLogItemActivity;
-		private Thread thread;
-		private SprintBackLogItem sprintBackLogItem;
-
-		private Project[] projects;
 
 	}
 

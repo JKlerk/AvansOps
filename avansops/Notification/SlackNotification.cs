@@ -6,13 +6,18 @@ namespace AvansOps {
 
 		private NotificationSlackProxy notificationSlackProxy;
 
-		public SlackNotification(SlackAdapter slackAdapter)
+		public SlackNotification()
 		{
-			this.slackAdapter = slackAdapter;
+			slackAdapter = new SlackAdapter();
 		}
 		
 		
 		public void SendSlackNotification(string message)
+		{
+			slackAdapter.SendSlackNotification(message);
+		}
+
+		public override void Notify(ProjectMember projectMember, string message)
 		{
 			slackAdapter.SendSlackNotification(message);
 		}
