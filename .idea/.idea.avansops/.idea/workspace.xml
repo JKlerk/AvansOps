@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6718e955-b6dd-4c45-8157-a0e62526edf4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/EmailNotification.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/INotificationStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/NotificationEmailProxy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/NotificationManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/NotificationSlackProxy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/SlackAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/SlackNotification.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/SlackService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/BackLogItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/BackLogItemActivity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Project.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/ProjectFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/ProjectMember.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Commit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/IPipelinePhase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/IPipelinePhaseSubscriber.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/Pipeline.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelineFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseAnalyse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseBuild.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseDeploy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhasePackage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Repository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/NotifyRole.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SetBackLogItemToDone.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/Sprint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintBackLogItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintPhase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/StrategyPlaceItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Thread.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/ThreadMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/ExportReportPDF.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/ExportReportPNG.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/IReportExportStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/TeamReport.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/TeamReportGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/Tests/UnitTest1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/User/Role.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps1/User/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/EmailNotification.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/INotificationStrategy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/NotificationEmailProxy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/NotificationManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/NotificationSlackProxy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/SlackAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/SlackNotification.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Notification/SlackService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/BackLogItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/BackLogItemActivity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Project.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/ProjectFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/ProjectMember.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Commit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/IPipelinePhase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/IPipelinePhaseSubscriber.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/Pipeline.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelineFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseAnalyse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseBuild.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseDeploy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhasePackage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseUtility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Repository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/NotifyRole.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SetBackLogItemToDone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/Sprint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintBackLogItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintPhase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/StrategyPlaceItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Thread.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/ThreadMessage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/ExportReportPDF.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/ExportReportPNG.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/IReportExportStrategy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/TeamReport.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/TeamReportGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/Tests/UnitTest1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/User/Role.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/User/User.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/avansops.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/avansops.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/avansops.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/avansops.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/project.packagespec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="26t0tYQBpUuHv26CJ4zFRqaNU22" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6718e955-b6dd-4c45-8157-a0e62526edf4" name="Changes" comment="" />
+      <created>1648227791618</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648227791618</updated>
+      <workItem from="1648227794522" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

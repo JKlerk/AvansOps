@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joeyd\\RiderProjects\\avansops\\avansops\\avansops.csproj": {}
+    "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joeyd\\RiderProjects\\avansops\\avansops\\avansops.csproj": {
+    "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeyd\\RiderProjects\\avansops\\avansops\\avansops.csproj",
-        "projectName": "avansops",
-        "projectPath": "C:\\Users\\joeyd\\RiderProjects\\avansops\\avansops\\avansops.csproj",
+        "projectUniqueName": "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj",
+        "projectName": "AvansOps",
+        "projectPath": "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj",
         "packagesPath": "C:\\Users\\joeyd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeyd\\RiderProjects\\avansops\\avansops\\obj\\",
+        "outputPath": "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joeyd\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -40,13 +40,13 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.11.0, )"
+              "version": "[16.9.4, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.0.2, )"
             },
             "xunit": {
               "target": "Package",
