@@ -2,14 +2,21 @@ using System;
 
 namespace AvansOps {
 	public class SlackAdapter {
-		public void SendSlackNotification(ref string message) {
-			throw new System.NotImplementedException("Not implemented");
-		}
-
-		private SlackService slackService;
+		
+		private readonly SlackService slackService;
 
 		private SlackNotification slackNotification;
 
+		public SlackAdapter(SlackService slackService)
+		{
+			this.slackService = slackService;
+		}
+		
+		
+		public void SendSlackNotification(string message)
+		{
+			slackService.Send(message);
+		}
 	}
 
 }

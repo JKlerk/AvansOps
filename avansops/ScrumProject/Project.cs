@@ -5,6 +5,23 @@ namespace AvansOps {
 		private int id;
 		private string name;
 		private string description;
+		private BackLogItem backLogItem;
+		private Repository repository;
+		private Sprint sprint;
+		private ProjectMember projectMember;
+		private SprintPhase sprintPhase;
+
+		public Project(int id, string name, string description, BackLogItem backLogItem, Repository repository, Sprint sprint, ProjectMember projectMember, SprintPhase sprintPhase)
+		{
+			this.id = id;
+			this.name = name;
+			this.description = description;
+			this.backLogItem = backLogItem;
+			this.repository = repository;
+			this.sprint = sprint;
+			this.projectMember = projectMember;
+			this.sprintPhase = sprintPhase;
+		}
 
 		public void NotifyRole(ref Role role) {
 			throw new System.NotImplementedException("Not implemented");
@@ -36,13 +53,6 @@ namespace AvansOps {
 		public void FinishCurrentSprint() {
 			throw new System.NotImplementedException("Not implemented");
 		}
-
-		private BackLogItem backLogItem;
-		private Repository repository;
-		private Sprint sprint;
-		private ProjectMember projectMember;
-		private SprintPhase sprintPhase;
-
 	}
 
 }
