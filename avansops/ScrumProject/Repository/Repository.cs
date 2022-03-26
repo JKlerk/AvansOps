@@ -18,7 +18,7 @@ namespace AvansOps
 			pipelines = new List<Pipeline>();
 		}
 
-		public void CreatePipeline(Sprint sprintRelease)
+		public void CreatePipeline(SprintRelease sprintRelease)
         {
 			pipelines.Add(PipelineFactory.CreatePipeline(this, sprintRelease));
         }
@@ -30,7 +30,7 @@ namespace AvansOps
 
 		public void RunPipeline(Sprint sprint) 
 		{
-			foreach (Pipeline pipeline in pipelines.Where(pipeline => pipeline.Sprint == sprint))
+			foreach (Pipeline pipeline in pipelines.Where(pipeline => pipeline.SprintRelease == sprint))
 			{
 				pipeline.Run();
 			}

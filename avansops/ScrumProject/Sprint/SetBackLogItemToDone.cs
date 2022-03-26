@@ -1,12 +1,12 @@
 using System;
 
 namespace AvansOps {
-	public class SetBackLogItemToDone : StrategyPlaceItem  {
+	public class SetBackLogItemToDone : IStrategyPlaceItem  {
 		private void SetToDone(ref SprintBackLogItem sprintBackLogItem) {
 			throw new System.NotImplementedException("Not implemented");
 		}
 
-		public override void OnPlace(SprintBackLogItem sprintBacklogItem, SprintPhase fromSprintPhase)
+		public void OnPlace(SprintBackLogItem sprintBacklogItem, SprintPhase fromSprintPhase)
 		{
 			throw new NotImplementedException();
 		}

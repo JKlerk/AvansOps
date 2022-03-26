@@ -3,21 +3,21 @@ using System.Collections.Generic;
 
 namespace AvansOps 
 {
-	public class Sprint
+	public abstract class Sprint
 	{
 		private int id;
 		public SprintState SprintState { get; protected set; }
 		public List<SprintBackLogItem> SprintBackLogItems { get; } 
 		public List<ProjectMember> ProjectMembers { get; }
 
-		private DateTime dateStart;
-		private DateTime dateEnd;
+		public DateTime DateStart { get; }
+		public DateTime DateEnd { get; }
 
 		public Sprint(int id, DateTime dateStart, DateTime dateEnd)
 		{
 			this.id = id;
-			this.dateStart = dateStart;
-			this.dateEnd = dateEnd;
+			DateStart = dateStart;
+			DateEnd = dateEnd;
 			SprintBackLogItems = new List<SprintBackLogItem>();
 			SprintState = SprintState.OnGoing;
 			ProjectMembers = new List<ProjectMember>();
@@ -25,20 +25,27 @@ namespace AvansOps
 
 		public void Cancel()
 		{
-			SprintState = SprintState.Canceled;
+			if (SprintState == SprintState.OnGoing)
+			{
+				SprintState = SprintState.Canceled;
+			}
+			else
+			{
+				throw new Exception("Sprint is already closed!");
+			}
 		}
 
-		public virtual void Finish()
+		protected virtual void Finish()
         {
-			if (SprintState != SprintState.Finished || SprintState != SprintState.Canceled)
+			if (SprintState == SprintState.OnGoing)
             {
 				SprintState = SprintState.Finished;
             }
 			else
             {
-				Console.WriteLine("Sprint is already closed!");
-            }
-        }
+				throw new Exception("Sprint is already closed!");
+			}
+		}
 
 		public SprintBackLogItem AddSprintBacklogItem(BackLogItem backLogItem)
 		{
@@ -54,11 +61,26 @@ namespace AvansOps
 
 		public void AddProjectMember(ProjectMember member)
 		{
+			if (ProjectMembers.Contains(member))
+            {
+				throw new Exception("Project already contains projectmember");
+			}
+
 			ProjectMembers.Add(member);
 		}
 		
 		public void RemoveProjectMember(ProjectMember member)
 		{
+			if (!ProjectMembers.Contains(member))
+			{
+				throw new Exception("Project does not contain projectmember");
+			}
+
+			if (ProjectMembers.Count == 1)
+            {
+				throw new Exception("Can't remove last member of the sprint");
+			}
+
 			ProjectMembers.Remove(member);
 		}
 	}

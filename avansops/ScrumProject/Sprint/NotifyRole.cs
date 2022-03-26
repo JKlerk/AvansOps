@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace AvansOps {
-	public class NotifyRole : StrategyPlaceItem
+	public class NotifyRole : IStrategyPlaceItem
 	{
 		public List<Role> Roles { get; }
 		public Project Project { get; }
@@ -15,7 +15,7 @@ namespace AvansOps {
 			Message = message;
 		}
 
-		public override void OnPlace(SprintBackLogItem sprintBacklogItem, SprintPhase fromSprintPhase)
+		public void OnPlace(SprintBackLogItem sprintBacklogItem, SprintPhase fromSprintPhase)
 		{
 			if(fromSprintPhase != null)NotificationManager.Notify(Roles, Project, Message);
 		}

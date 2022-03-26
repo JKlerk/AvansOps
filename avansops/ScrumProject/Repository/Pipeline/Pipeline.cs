@@ -7,18 +7,18 @@ namespace AvansOps
     {
 		private Repository repository;
 		private List<IPipelinePhase> phases;
-		public Sprint Sprint { get; }
+		public SprintRelease SprintRelease { get; }
 		public bool IsFinished { get; private set; }
 
 		public bool IsRunning { get; private set; }
 
 		private int indexCurrentPhase;
 
-		public Pipeline(Repository repository, Sprint sprintRelease)
+		public Pipeline(Repository repository, SprintRelease sprintRelease)
 		{
 			this.repository = repository;
 			phases = new List<IPipelinePhase>();
-			Sprint = sprintRelease;
+			SprintRelease = sprintRelease;
 		}
 
 		public void Run() 
@@ -50,7 +50,7 @@ namespace AvansOps
 		private void FinishPipeline() 
 		{
 			IsFinished = true;
-			Sprint.Finish();
+			SprintRelease.FinishPipeline();
 		}
 
         void IPipelinePhaseSubscriber.Finish()
