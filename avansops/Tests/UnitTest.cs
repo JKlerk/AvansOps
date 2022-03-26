@@ -114,7 +114,5 @@ namespace AvansOps1.Tests
         
             Assert.True(project.GetPhase("Testing").GetSprintBackLogItems()[0].BackLogItem.GetName() == sprintBackLogItem.BackLogItem.GetName());
         }
-    
-    
     }
 }

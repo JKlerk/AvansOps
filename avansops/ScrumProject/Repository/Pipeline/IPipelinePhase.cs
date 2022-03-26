@@ -38,10 +38,7 @@ namespace AvansOps
 
 		protected virtual void Start()
         {
-            for (int i = 0; i < subscribers.Count; i++)
-            {
-				subscribers[i].Start();
-            }
+
         }
 
 		protected void Hook() 
