@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AvansOps1;
 using Xunit;
 
-namespace AvansOps1.Tests
+namespace AvansOps
 {
     public class PathCoverageTest
     {
