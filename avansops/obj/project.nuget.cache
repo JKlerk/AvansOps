@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "b7gk/t6Gc2hYZaC+11KhaGAAj8Rjs7OUJYzQ2Rw+G4OGga1UZB42CU4shR6aehL465kkMxyOht5LgY5clGpmCg==",
+  "dgSpecHash": "96RLrVJDu8a2woMQtifP7YfRSclp4tQ+IFYHYAXxOe7PDbKjilygFQFMvhjOldnJmB7luRN5/ETm1B28JCpz4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joeyd\\RiderProjects\\avansops\\AvansOps\\AvansOps.csproj",
+  "projectFilePath": "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joeyd\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
+    "C:\\Users\\joeyd\\.nuget\\packages\\coverlet.msbuild\\3.1.2\\coverlet.msbuild.3.1.2.nupkg.sha512",
     "C:\\Users\\joeyd\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\joeyd\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\joeyd\\.nuget\\packages\\microsoft.net.test.sdk\\16.9.4\\microsoft.net.test.sdk.16.9.4.nupkg.sha512",
