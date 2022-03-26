@@ -38,8 +38,7 @@ namespace AvansOps {
 
 		public Sprint AddSprint(SprintType sprintType, DateTime start, DateTime end, ProjectMember creator)
 		{
-			SprintFactory sprintFactory = new SprintFactory();
-			var sprint = SprintFactory.CreateSprint(sprintType, start, end, creator);
+			Sprint sprint = SprintFactory.CreateSprint(sprintType, start, end, creator);
 			sprints.Add(sprint);
 			return sprint;
 		}

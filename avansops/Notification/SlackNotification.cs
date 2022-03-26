@@ -1,6 +1,7 @@
 using AvansOps;
 
-namespace AvansOps1.Notification {
+namespace AvansOps
+{
 	public class SlackNotification : INotificationStrategy  {
 		private SlackAdapter slackAdapter;
 		

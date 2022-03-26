@@ -7,9 +7,6 @@ namespace AvansOps
 	{
 		private List<IPipelinePhaseSubscriber> subscribers;
 		private Pipeline pipeline;
-		private IPipelinePhaseSubscriber iPipelinePhaseSubscriber;
-
-		private Pipeline pipelines;
 
 		public IPipelinePhase()
         {

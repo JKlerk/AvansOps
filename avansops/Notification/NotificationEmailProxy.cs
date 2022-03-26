@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using AvansOps;
 
-namespace AvansOps1.Notification {
+namespace AvansOps 
+{
 	public class NotificationEmailProxy : INotificationStrategy  {
 		
 		private EmailNotification emailNotification;

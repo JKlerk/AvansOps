@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using AvansOps;
-using AvansOps1.Notification;
 using Xunit;
 
-namespace AvansOps1.Tests
+namespace AvansOps.Tests
 {
     public class UnitTest
     {
