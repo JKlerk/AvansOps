@@ -5,7 +5,6 @@ namespace AvansOps
 {
     public class Pipeline : IPipelinePhaseSubscriber
     {
-		private IPipelinePhase iPipelinePhase;
 		private Repository repository;
 		private List<IPipelinePhase> phases;
 		public Sprint Sprint { get; }
@@ -15,10 +14,11 @@ namespace AvansOps
 
 		private int indexCurrentPhase;
 
-		public Pipeline(Repository repository)
+		public Pipeline(Repository repository, Sprint sprintRelease)
 		{
 			this.repository = repository;
 			phases = new List<IPipelinePhase>();
+			Sprint = sprintRelease;
 		}
 
 		public void Run() 
@@ -50,7 +50,7 @@ namespace AvansOps
 		private void FinishPipeline() 
 		{
 			IsFinished = true;
-			repository.Project.FinishCurrentSprint();
+			Sprint.Finish();
 		}
 
         void IPipelinePhaseSubscriber.Finish()

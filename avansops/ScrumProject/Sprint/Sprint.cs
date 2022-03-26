@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AvansOps 
 {
-	public abstract class Sprint
+	public class Sprint
 	{
 		private int id;
 		public SprintState SprintState { get; protected set; }
@@ -28,19 +28,17 @@ namespace AvansOps
 			SprintState = SprintState.Canceled;
 		}
 
-		public void Finish()
+		public virtual void Finish()
         {
 			if (SprintState != SprintState.Finished || SprintState != SprintState.Canceled)
             {
-				TryFinish();
+				SprintState = SprintState.Finished;
             }
 			else
             {
 				Console.WriteLine("Sprint is already closed!");
             }
         }
-
-		protected abstract void TryFinish();
 
 		public SprintBackLogItem AddSprintBacklogItem(BackLogItem backLogItem)
 		{

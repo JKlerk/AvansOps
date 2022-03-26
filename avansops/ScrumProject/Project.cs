@@ -26,11 +26,6 @@ namespace AvansOps {
 			repository = new Repository(this);
 		}
 
-		public void NotifyRole(Role role)
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-
 		public void AddBackLogItem(BackLogItem backLogItem)
 		{
 			BackLogItems.Add(backLogItem);
@@ -48,8 +43,6 @@ namespace AvansOps {
                 case SprintType.Release:
 					sprint = SprintFactory.CreateReleaseSprint(repository, start, end, creator);
 					break;
-                default:
-                    break;
             }
 
 			Sprints.Add(sprint);
@@ -96,21 +89,6 @@ namespace AvansOps {
 			}
 
 			phase.PlaceItem(sprintBackLogItem, sprintPhaseFrom);
-		}
-
-		public void UploadReviewDoc(Sprint sprint)
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-
-		public void StartPipelineCurrentSprint()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-
-		public void FinishCurrentSprint()
-		{
-			GetCurrentSprint().Finish();
 		}
 
 		public Sprint GetCurrentSprint()

@@ -12,8 +12,8 @@ namespace AvansOps {
 
         public static Sprint CreateReleaseSprint(Repository repository, DateTime start, DateTime end, ProjectMember creator)
         {
-            Pipeline pipeline = PipelineFactory.CreatePipeline(repository);
-            Sprint sprint = new SprintRelease(999, start, end, pipeline);
+            Sprint sprint = new Sprint(999, start, end);
+            repository.CreatePipeline(sprint);
             sprint.ProjectMembers.Add(creator);
             return sprint;
         }

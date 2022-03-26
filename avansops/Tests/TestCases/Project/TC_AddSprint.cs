@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AvansOps.Tests.TestCases
+namespace AvansOps
 {
     public class TC_AddSprint
     {
@@ -15,6 +15,18 @@ namespace AvansOps.Tests.TestCases
             User user = new User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
             AvansOps.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+
+            project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+
+            Assert.NotEmpty(project.Sprints);
+        }
+
+        [Fact]
+        public void Test2()
+        {
+            User user = new User("testFirst", "testLast", "test@test.com");
+            ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
+            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
             project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 

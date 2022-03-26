@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AvansOps 
 {
 	public class Repository 
 	{
-		private Pipeline pipeline;
+		private List<Pipeline> pipelines;
 		private List<Commit> commits;
 
 		public Project Project { get; }
@@ -14,21 +15,38 @@ namespace AvansOps
 		{
 			Project = project;
 			commits = new List<Commit>();
-			pipeline = PipelineFactory.CreatePipeline(this);
+			pipelines = new List<Pipeline>();
 		}
+
+		public void CreatePipeline(Sprint sprintRelease)
+        {
+			pipelines.Add(PipelineFactory.CreatePipeline(this, sprintRelease));
+        }
+
 		public void Commit(Commit commit) 
 		{
 			commits.Add(commit);
 		}
 
-		public void RunPipeLine() 
+		public void RunPipeline(Sprint sprint) 
 		{
-			pipeline.Run();
+			foreach (Pipeline pipeline in pipelines.Where(pipeline => pipeline.Sprint == sprint))
+			{
+				pipeline.Run();
+			}
 		}
 
 		public bool IsPipelineRunning() 
 		{
-			return pipeline.IsRunning;
+            foreach (Pipeline pipeline in pipelines)
+            {
+				if (pipeline.IsRunning)
+                {
+					return true;
+                }
+            }
+
+			return false;
 		}
 
 		public List<Commit> GetCommits()

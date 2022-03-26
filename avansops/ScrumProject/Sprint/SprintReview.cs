@@ -13,26 +13,14 @@ namespace AvansOps
         public SprintReview(int id, DateTime dateStart, DateTime dateEnd) : base(id, dateStart, dateEnd)
         { }
 
-        protected override void TryFinish()
-        {
-            if (SprintState == SprintState.Finished)
-            {
-                return;
-            }
-
-            if (ReviewDoc != null)
-            {
-                SprintState = SprintState.Finished;
-            }
-            else
-            {
-                Console.WriteLine("No ReviewDoc uploaded yet!");
-            }
-        }
-
         public void UploadReviewDoc(ReviewDoc reviewDoc)
         {
             ReviewDoc = reviewDoc;
+
+            if (ReviewDoc != null)
+            {
+                Finish();
+            }
         }
     }
 }
