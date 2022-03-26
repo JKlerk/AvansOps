@@ -30,5 +30,10 @@ namespace AvansOps
 		{
 			return pipeline.IsRunning;
 		}
+
+		public List<Commit> GetCommits()
+		{
+			return commits;
+		}
 	}
 }

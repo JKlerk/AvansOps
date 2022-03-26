@@ -60,6 +60,7 @@ namespace AvansOps {
 		{
 			SprintBackLogItem item = sprint.AddSprintBacklogItem(backLogItem);
 			SprintPhases[0].PlaceItem(item, null);
+			backLogItem.SetSprintBackLogItem(item);
 			return item;
 		}
 
@@ -115,6 +116,11 @@ namespace AvansOps {
 		public Sprint GetCurrentSprint()
 		{
 			return Sprints.First(sprint => sprint.SprintState == SprintState.OnGoing);
+		}
+
+		public Repository GetRepository()
+		{
+			return repository;
 		}
 	}
 }

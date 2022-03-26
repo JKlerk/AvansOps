@@ -14,11 +14,13 @@ namespace AvansOps.Tests.TestCases
         {
             User user = new User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            AvansOps.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
             project.AddPhase(new SprintPhase(999, "TestPhase", new List<Role>() { Role.Developer, Role.ScrumMaster, Role.Tester }));
 
-            Assert.NotNull(project.GetPhase("TestPhase"));
+            var phase = project.GetPhase("TestPhase");
+            Assert.NotNull(phase);
+            Assert.True(project.GetPhase("TestPhase") == project.GetPhase(phase.Id));
         }
     }
 }

@@ -14,7 +14,7 @@ namespace AvansOps.Tests.TestCases
         {
             User user = new User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            AvansOps.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
             BackLogItem backLogItem = new BackLogItem(0, "Test", "Test");
             project.AddBackLogItem(backLogItem);

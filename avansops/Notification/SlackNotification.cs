@@ -10,11 +10,6 @@ namespace AvansOps
 		{
 			slackAdapter = new SlackAdapter();
 		}
-		
-		public void SendSlackNotification(string message)
-		{
-			slackAdapter.SendSlackNotification(message);
-		}
 
 		public override void Notify(ProjectMember projectMember, string message)
 		{

@@ -14,7 +14,7 @@ namespace AvansOps.Tests.TestCases
         {
             User user = new User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            AvansOps.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
             project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 

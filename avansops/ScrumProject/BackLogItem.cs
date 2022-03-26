@@ -19,13 +19,14 @@ namespace AvansOps {
 			this.id = id;
 			this.name = name;
 			this.description = description;
+			isDone = false;
 			projectMember = null;
 			backLogItemActivities = new List<BackLogItemActivity>();
 			threads = new List<Thread>();
 		}
 
-		public void CreateThread(ProjectMember projectMember, string name, string description) {
-			threads.Add(new Thread(threads.Count + 1, name, description, projectMember));
+		public void AddThread(Thread thread) {
+			threads.Add(thread);
 		}
 		public string GetName() {
 			return name;
@@ -34,11 +35,11 @@ namespace AvansOps {
 			return description;
 		}
 		public void CreateActivity(string name, string description, ProjectMember member) {
-			backLogItemActivities.Add(new BackLogItemActivity(1, name, description, member, this));
+			backLogItemActivities.Add(new BackLogItemActivity(1, name, description, member));
 		}
 		public bool IsActivitiesDone()
 		{
-			var doneList = backLogItemActivities.Where(activity => activity.GetBackLogItem().IsDone()).ToList();
+			var doneList = backLogItemActivities.Where(activity => activity.IsAcitvityDone()).ToList();
 			return doneList.Count == backLogItemActivities.Count;
 		}
 		public void SetName(string name)
@@ -49,10 +50,12 @@ namespace AvansOps {
 		{
 			this.description = description;
 		}
-		private bool IsBoundToSprint()
+		
+		public bool IsBoundToSprint()
 		{
 			return sprintBackLogItem != null;
 		}
+		
 		public bool IsDone()
 		{
 			return isDone;
@@ -74,6 +77,16 @@ namespace AvansOps {
 		public ProjectMember GetProjectMember()
 		{
 			return projectMember;
+		}
+
+		public List<Thread> GetThreads()
+		{
+			return threads;
+		}
+
+		public List<BackLogItemActivity> GetBackLogItemActivities()
+		{
+			return backLogItemActivities;
 		}
 		
 	}

@@ -2,7 +2,7 @@ using System;
 
 namespace AvansOps {
 	public class ThreadMessage {
-		private int Id { get; }
+		public int Id { get; }
 		private string message;
 		private DateTime dateTime;
 

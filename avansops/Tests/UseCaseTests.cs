@@ -18,7 +18,6 @@ namespace AvansOps.Tests
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
-     
             var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
             project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("Testing"));
             project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("Todo"));

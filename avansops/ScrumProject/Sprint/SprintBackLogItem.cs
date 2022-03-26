@@ -15,7 +15,7 @@ namespace AvansOps {
 		}
 		
 		public void SetToDone() {
-			throw new System.NotImplementedException("Not implemented");
+			BackLogItem.SetToDone();
 		}
 
 	}

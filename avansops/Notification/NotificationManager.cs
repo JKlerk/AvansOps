@@ -22,5 +22,4 @@ namespace AvansOps
 			projectMember.NotificationStrategy.Notify(projectMember, message);
 		}
 	}
-
 }
