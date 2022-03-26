@@ -4,11 +4,10 @@ using System.Collections.Generic;
 namespace AvansOps {
 	public class Thread {
 		private int id;
-		private string name;
-		private string description;
+		private readonly string name;
+		private readonly string description;
+		private readonly List<ThreadMessage> threadMessages;
 		private ProjectMember creator;
-		private List<ThreadMessage> threadMessages;
-		private BackLogItem backLogItem;
 
 		public Thread(int id, string name, string description, ProjectMember creator)
 		{
@@ -33,12 +32,6 @@ namespace AvansOps {
 		{
 			return threadMessages;
 		}
-
-		public BackLogItem GetBackLogItem()
-		{
-			return backLogItem;
-		}
-		
 	}
 
 }

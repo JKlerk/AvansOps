@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
+using AvansOps;
 
-namespace AvansOps {
+namespace AvansOps1.Notification {
 	public class NotificationSlackProxy : INotificationStrategy
 	{
 		public List<string> Messages { get; }
@@ -16,8 +16,6 @@ namespace AvansOps {
 		private void LogNotification(string message) {
 			Messages.Add(message);
 		}
-
-		
 
 		public override void Notify(ProjectMember projectMember, string message)
 		{

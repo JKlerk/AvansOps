@@ -1,17 +1,16 @@
 using System;
+using AvansOps;
 
-namespace AvansOps {
+namespace AvansOps1.Notification {
 	public class EmailNotification : INotificationStrategy  {
 		
-		private NotificationEmailProxy notificationEmailProxy;
-		
-		private void SendMail() {
-			throw new System.NotImplementedException("Not implemented");
+		private void SendMail(string msg) {
+			Console.Write(msg);
 		}
 
 		public override void Notify(ProjectMember projectMember, string message)
 		{
-			throw new NotImplementedException();
+			SendMail(message);
 		}
 	}
 

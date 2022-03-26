@@ -2,21 +2,26 @@ using System;
 
 namespace AvansOps {
 	public class Commit {
-		private string message;
-		private DateTime dateTime;
-		private ProjectMember projectMember;
+		private readonly string message;
+		private readonly DateTime dateTime;
+		private readonly ProjectMember projectMember;
 		
-		public Commit(ref DateTime dateTime, ref string message) {
-			throw new System.NotImplementedException("Not implemented");
+		public Commit(string message, ProjectMember member) {
+			dateTime = DateTime.Now;
+			projectMember = member;
+			this.message = message;
 		}
 		public string GetMessage() {
-			return this.message;
+			return message;
 		}
 		public DateTime GetDateTime() {
-			return this.dateTime;
+			return dateTime;
 		}
 
-		
+		public ProjectMember GetProjectMember()
+		{
+			return projectMember;
+		}
 
 	}
 

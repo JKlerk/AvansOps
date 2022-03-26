@@ -16,7 +16,7 @@ namespace AvansOps {
 
 		}
 
-		public void Commit(ref Commit commit) {
+		public void Commit(Commit commit) {
 			throw new System.NotImplementedException("Not implemented");
 		}
 		public Project GetProject() {
