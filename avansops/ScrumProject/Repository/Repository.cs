@@ -1,36 +1,34 @@
 using System;
 using System.Collections.Generic;
 
-namespace AvansOps {
-	public class Repository {
-		private List<Pipeline> pipelines;
+namespace AvansOps 
+{
+	public class Repository 
+	{
+		private Pipeline pipeline;
 		private List<Commit> commits;
-		private Project project;
 
+		public Project Project { get; }
 
 		public Repository(Project project)
 		{
-			this.project = project;
-			pipelines = new List<Pipeline>();
+			Project = project;
 			commits = new List<Commit>();
-
+			pipeline = PipelineFactory.CreatePipeline(this);
+		}
+		public void Commit(Commit commit) 
+		{
+			commits.Add(commit);
 		}
 
-		public void Commit(Commit commit) {
-			throw new System.NotImplementedException("Not implemented");
+		public void RunPipeLine() 
+		{
+			pipeline.Run();
 		}
-		public Project GetProject() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void CreatePipeline() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void RunPipeLine() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public bool IsAPipelineRunning() {
-			throw new System.NotImplementedException("Not implemented");
+
+		public bool IsPipelineRunning() 
+		{
+			return pipeline.IsRunning;
 		}
 	}
-
 }

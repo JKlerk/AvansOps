@@ -1,11 +1,11 @@
 using System;
 
 namespace AvansOps {
-	public class PipelineFactory {
-		public Pipeline CreatePipeline() {
-			throw new System.NotImplementedException("Not implemented");
+	public static class PipelineFactory {
+		public static Pipeline CreatePipeline(Repository repository) 
+		{
+			Pipeline pipeLine = new Pipeline(repository);
+			return pipeLine;
 		}
-
 	}
-
 }

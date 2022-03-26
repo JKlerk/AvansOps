@@ -1,16 +1,9 @@
 using System;
 
 namespace AvansOps {
-	public abstract class IPipelinePhaseSubscriber {
-		public void Finish() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void Error(ref string message) {
-			throw new System.NotImplementedException("Not implemented");
-		}
-
-		private IPipelinePhase[] iPipelinePhases;
-
+	public interface IPipelinePhaseSubscriber 
+	{
+		protected void Finish();
+		protected void Error(string message);
 	}
-
 }

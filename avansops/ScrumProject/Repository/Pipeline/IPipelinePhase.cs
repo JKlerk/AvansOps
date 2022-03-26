@@ -1,24 +1,68 @@
 using System;
+using System.Collections.Generic;
 
-namespace AvansOps {
-	public abstract class IPipelinePhase {
-		private IPipelinePhaseSubscriber[] subscribers;
-
-		public void TemplateMethod() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		protected abstract void StartPhase();
-		protected void Hook() {
-			throw new System.NotImplementedException("Not implemented");
-		}
-		protected abstract void Finish();
-		protected abstract void Error();
-
+namespace AvansOps 
+{
+	public abstract class IPipelinePhase 
+	{
+		private List<IPipelinePhaseSubscriber> subscribers;
 		private Pipeline pipeline;
 		private IPipelinePhaseSubscriber iPipelinePhaseSubscriber;
 
-		private Pipeline[] pipelines;
+		private Pipeline pipelines;
 
+		public IPipelinePhase()
+        {
+			subscribers = new List<IPipelinePhaseSubscriber>();
+		}
+
+		public void Subscribe(IPipelinePhaseSubscriber pipelinePhaseSubscriber)
+        {
+			subscribers.Add(pipelinePhaseSubscriber);
+        }
+
+		public void TemplateMethod() 
+		{
+            try
+            {
+				Start();
+				Hook();
+				Finish();
+
+			}
+			catch
+            {
+				Error();
+			}
+		}
+
+		protected virtual void Start()
+        {
+            for (int i = 0; i < subscribers.Count; i++)
+            {
+				subscribers[i].Start();
+            }
+        }
+
+		protected void Hook() 
+		{
+			
+		}
+
+		protected virtual void Finish()
+        {
+			for (int i = 0; i < subscribers.Count; i++)
+			{
+				subscribers[i].Finish();
+			}
+		}
+
+		protected virtual void Error()
+        {
+			for (int i = 0; i < subscribers.Count; i++)
+			{
+				subscribers[i].Error("");
+			}
+		}
 	}
-
 }

@@ -2,27 +2,15 @@ using System;
 
 namespace AvansOps {
 	public class Commit {
-		private readonly string message;
-		private readonly DateTime dateTime;
-		private readonly ProjectMember projectMember;
+		public string Message { get; }
+		public DateTime DateTime { get; }
+		public ProjectMember ProjectMember { get; }
 		
-		public Commit(string message, ProjectMember member) {
-			dateTime = DateTime.Now;
-			projectMember = member;
-			this.message = message;
-		}
-		public string GetMessage() {
-			return message;
-		}
-		public DateTime GetDateTime() {
-			return dateTime;
-		}
-
-		public ProjectMember GetProjectMember()
+		public Commit(DateTime dateTime, string message, ProjectMember projectMember) 
 		{
-			return projectMember;
+			DateTime = dateTime;
+			Message = message;
+			ProjectMember = projectMember;
 		}
-
 	}
-
 }
