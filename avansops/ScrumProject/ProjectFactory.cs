@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AvansOps {
 	public class ProjectFactory {
-		public Project CreateProject(int id, string name, string description, ProjectMember creator) {
+		public static Project CreateProject(int id, string name, string description, ProjectMember creator) {
 			Project project =  new Project(id, name, description, creator);
 
 			var todoPhase = new SprintPhase(1, "Todo", new List<Role>()

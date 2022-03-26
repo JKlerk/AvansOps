@@ -2,7 +2,7 @@ using System;
 
 namespace AvansOps {
 	public class ThreadMessage {
-		private int id;
+		private int Id { get; }
 		private string message;
 		private DateTime dateTime;
 
@@ -10,7 +10,7 @@ namespace AvansOps {
 
 		public ThreadMessage(string message, ProjectMember projectMember)
 		{
-			id = 1;
+			Id = 1;
 			this.message = message;
 			dateTime = DateTime.Now;
 			this.projectMember = projectMember;
@@ -19,6 +19,7 @@ namespace AvansOps {
 		public string GetMessage() {
 			return message;
 		}
+
 		public DateTime GetDateTime() {
 			return dateTime;
 		}

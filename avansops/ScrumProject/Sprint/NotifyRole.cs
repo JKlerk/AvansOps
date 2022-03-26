@@ -15,7 +15,7 @@ namespace AvansOps {
 			Message = message;
 		}
 
-		public override void OnPlace(SprintBackLogItem sprintBacklogItem, SprintPhase? fromSprintPhase)
+		public override void OnPlace(SprintBackLogItem sprintBacklogItem, SprintPhase fromSprintPhase)
 		{
 			if(fromSprintPhase != null)NotificationManager.Notify(Roles, Project, Message);
 		}

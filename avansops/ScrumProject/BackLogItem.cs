@@ -9,7 +9,7 @@ namespace AvansOps {
 		private string description;
 		private bool isDone;
 		
-		private ProjectMember? projectMember;
+		private ProjectMember projectMember;
 		private List<BackLogItemActivity> backLogItemActivities;
 		private List<Thread> threads;
 		private SprintBackLogItem sprintBackLogItem;
@@ -19,12 +19,13 @@ namespace AvansOps {
 			this.id = id;
 			this.name = name;
 			this.description = description;
+			projectMember = null;
 			backLogItemActivities = new List<BackLogItemActivity>();
 			threads = new List<Thread>();
 		}
 
 		public void CreateThread(ProjectMember projectMember, string name, string description) {
-			threads.Add(new Thread(1, name, description, projectMember));
+			threads.Add(new Thread(threads.Count + 1, name, description, projectMember));
 		}
 		public string GetName() {
 			return name;
@@ -56,14 +57,25 @@ namespace AvansOps {
 		{
 			return isDone;
 		}
-		public void SetSprintBackLogItem(ref SprintBackLogItem sprintBackLogItem) {
-			throw new System.NotImplementedException("Not implemented");
+		public void SetSprintBackLogItem(SprintBackLogItem sprintBackLogItem)
+		{
+			this.sprintBackLogItem = sprintBackLogItem;
 		}
 		public void SetToDone()
 		{
 			isDone = true;
 		}
 
+		public void SetProjectMember(ProjectMember member)
+		{
+			projectMember = member;
+		}
+
+		public ProjectMember GetProjectMember()
+		{
+			return projectMember;
+		}
+		
 	}
 
 }

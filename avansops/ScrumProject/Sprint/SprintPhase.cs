@@ -18,7 +18,7 @@ namespace AvansOps {
 			strategiesPlaceItem = new List<StrategyPlaceItem>();
 			sprintBackLogItems = new List<SprintBackLogItem>();
 		}
-		public void PlaceItem(SprintBackLogItem sprintBackLogItem, SprintPhase? fromSprintPhase) {
+		public void PlaceItem(SprintBackLogItem sprintBackLogItem, SprintPhase fromSprintPhase) {
 			sprintBackLogItems.Add(sprintBackLogItem);
 			foreach (var strategyPlaceItem in strategiesPlaceItem)
 			{

@@ -31,8 +31,7 @@ public class UnitTest
     {
         var notificationStrategy = new NotificationSlackProxy();
         var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
-        ProjectFactory projectFactory = new ProjectFactory();
-        var project = projectFactory.CreateProject(1, "Project 1", "description of project", member);
+        var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
 
         Assert.True(project.Name == "Project 1");
         Assert.True(project.Description == "description of project");
@@ -43,8 +42,7 @@ public class UnitTest
     {
         var notificationStrategy = new NotificationSlackProxy();
         var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
-        ProjectFactory projectFactory = new ProjectFactory();
-        var project = projectFactory.CreateProject(1, "Project 1", "description of project", member);
+        var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
         Assert.True(project.GetPhase("Todo") != null);
         Assert.True(project.GetPhase("Doing") != null);
         Assert.True(project.GetPhase("Ready for testing") != null);
@@ -58,8 +56,7 @@ public class UnitTest
     {
         var notificationStrategy = new NotificationSlackProxy();
         var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
-        ProjectFactory projectFactory = new ProjectFactory();
-        var project = projectFactory.CreateProject(1, "Project 1", "description of project", member);
+        var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
         Assert.True(project.GetPhase("Todo").GetStrategiesPlaceItem()[0].GetType() == typeof(NotifyRole));
     }
 
@@ -69,8 +66,7 @@ public class UnitTest
         var notificationStrategy = new NotificationSlackProxy();
         var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
         var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
-        ProjectFactory projectFactory = new ProjectFactory();
-        var project = projectFactory.CreateProject(1, "Project 1", "description of project", member);
+        var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
         project.AddBackLogItem(backlogItem);
         
         Assert.True(project.GetBacklogItems().Count == 1);
@@ -82,8 +78,7 @@ public class UnitTest
     {
         var notificationStrategy = new NotificationSlackProxy();
         var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
-        ProjectFactory projectFactory = new ProjectFactory();
-        var project = projectFactory.CreateProject(1, "Project 1", "description of project", member);
+        var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
         var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
         
         Assert.True(project.GetSprints().Count == 1);
@@ -96,8 +91,7 @@ public class UnitTest
         var notificationStrategy = new NotificationSlackProxy();
         var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
         var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
-        ProjectFactory projectFactory = new ProjectFactory();
-        var project = projectFactory.CreateProject(1, "Project 1", "description of project", member);
+        var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
         project.AddBackLogItem(backlogItem);
         var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
         project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
@@ -110,8 +104,7 @@ public class UnitTest
         var notificationStrategy = new NotificationSlackProxy();
         var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
         var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
-        ProjectFactory projectFactory = new ProjectFactory();
-        var project = projectFactory.CreateProject(1, "Project 1", "description of project", member);
+        var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
         project.AddBackLogItem(backlogItem);
         var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
         var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);

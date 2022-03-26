@@ -16,6 +16,7 @@ namespace AvansOps {
 			this.name = name;
 			this.description = description;
 			this.creator = creator;
+			threadMessages = new List<ThreadMessage>();
 		}
 
 		public void CreateMessage(string message, ProjectMember projectMember) {
@@ -27,6 +28,17 @@ namespace AvansOps {
 		public string GetDescription() {
 			return description;
 		}
+
+		public List<ThreadMessage> GetThreadMessages()
+		{
+			return threadMessages;
+		}
+
+		public BackLogItem GetBackLogItem()
+		{
+			return backLogItem;
+		}
+		
 	}
 
 }
