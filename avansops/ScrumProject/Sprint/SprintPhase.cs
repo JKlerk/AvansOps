@@ -5,49 +5,35 @@ namespace AvansOps {
 	public class SprintPhase {
 		public int Id { get; }
 		public string Name { get; }
-		private List<SprintBackLogItem> sprintBackLogItems;
-		private List<Role> rolesAuthorized;
+		public List<SprintBackLogItem> SprintBackLogItems { get; }
 
-		private List<StrategyPlaceItem> strategiesPlaceItem;
+		public List<Role> RolesAuthorized { get; }
+
+		public List<StrategyPlaceItem> StrategiesPlaceItem { get; }
 
 		public SprintPhase(int id, string name, List<Role> rolesAuthorized)
 		{
 			Id = id;
 			Name = name;
-			this.rolesAuthorized = rolesAuthorized;
-			strategiesPlaceItem = new List<StrategyPlaceItem>();
-			sprintBackLogItems = new List<SprintBackLogItem>();
+			this.RolesAuthorized = rolesAuthorized;
+			StrategiesPlaceItem = new List<StrategyPlaceItem>();
+			SprintBackLogItems = new List<SprintBackLogItem>();
 		}
 		public void PlaceItem(SprintBackLogItem sprintBackLogItem, SprintPhase fromSprintPhase) {
-			sprintBackLogItems.Add(sprintBackLogItem);
-			foreach (var strategyPlaceItem in strategiesPlaceItem)
+			SprintBackLogItems.Add(sprintBackLogItem);
+			foreach (var strategyPlaceItem in StrategiesPlaceItem)
 			{
 				strategyPlaceItem.OnPlace(sprintBackLogItem, fromSprintPhase);
 			}
 		}
 		public void RemoveItem(SprintBackLogItem item)
 		{
-			sprintBackLogItems.Remove(item);
-		}
-
-		public List<SprintBackLogItem> GetSprintBackLogItems()
-		{
-			return sprintBackLogItems;
+			SprintBackLogItems.Remove(item);
 		}
 
 		public void AddStrategyPlaceItem(StrategyPlaceItem strategyPlaceItem)
 		{
-			strategiesPlaceItem.Add(strategyPlaceItem);
+			StrategiesPlaceItem.Add(strategyPlaceItem);
 		}
-
-		public List<Role> GetRolesAuthorized() {
-			return rolesAuthorized;
-		}
-
-		public List<StrategyPlaceItem> GetStrategiesPlaceItem()
-		{
-			return strategiesPlaceItem;
-		}
-		
 	}
 }

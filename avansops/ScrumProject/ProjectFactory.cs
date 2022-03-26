@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 
 namespace AvansOps {
-	public class ProjectFactory {
+	public static class ProjectFactory 
+	{
 		public static Project CreateProject(int id, string name, string description, ProjectMember creator) {
 			Project project =  new Project(id, name, description, creator);
 

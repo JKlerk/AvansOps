@@ -50,7 +50,7 @@ namespace AvansOps.Tests
             Assert.True(project.GetPhase("Ready for testing") != null);
             Assert.True(project.GetPhase("Testing") != null);
             Assert.True(project.GetPhase("Tested and done") != null);
-            Assert.True(project.GetPhases().Count == 5);
+            Assert.True(project.SprintPhases.Count == 5);
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace AvansOps.Tests
             var notificationStrategy = new NotificationSlackProxy();
             var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
-            Assert.True(project.GetPhase("Todo").GetStrategiesPlaceItem()[0].GetType() == typeof(NotifyRole));
+            Assert.True(project.GetPhase("Todo").StrategiesPlaceItem[0].GetType() == typeof(NotifyRole));
         }
 
         [Fact]
@@ -71,8 +71,8 @@ namespace AvansOps.Tests
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);
         
-            Assert.True(project.GetBacklogItems().Count == 1);
-            Assert.True(project.GetBacklogItems()[0].GetName() == backlogItem.GetName());
+            Assert.True(project.BackLogItems.Count == 1);
+            Assert.True(project.BackLogItems[0].GetName() == backlogItem.GetName());
         }
 
         [Fact]
@@ -83,8 +83,8 @@ namespace AvansOps.Tests
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
         
-            Assert.True(project.GetSprints().Count == 1);
-            Assert.True(project.GetSprints()[0] == sprint);
+            Assert.True(project.Sprints.Count == 1);
+            Assert.True(project.Sprints[0] == sprint);
         }
 
         [Fact]
@@ -97,7 +97,7 @@ namespace AvansOps.Tests
             project.AddBackLogItem(backlogItem);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
-            Assert.True(project.GetPhases()[0].GetSprintBackLogItems()[0].BackLogItem.GetName() == backlogItem.GetName());
+            Assert.True(project.SprintPhases[0].SprintBackLogItems[0].BackLogItem.GetName() == backlogItem.GetName());
         }
 
         [Fact]
@@ -112,7 +112,7 @@ namespace AvansOps.Tests
             var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
             project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("Testing"));
         
-            Assert.True(project.GetPhase("Testing").GetSprintBackLogItems()[0].BackLogItem.GetName() == sprintBackLogItem.BackLogItem.GetName());
+            Assert.True(project.GetPhase("Testing").SprintBackLogItems[0].BackLogItem.GetName() == sprintBackLogItem.BackLogItem.GetName());
         }
     }
 }

@@ -8,10 +8,10 @@ namespace AvansOps {
 		private int id;
 		public string Name { get; }
 		public string Description { get; }
-		private List<BackLogItem> backLogItems;
+		public List<BackLogItem> BackLogItems { get; }
+		public List<Sprint> Sprints { get; }
 		private Repository repository;
-		private List<Sprint> sprints;
-		private List<SprintPhase> sprintPhases;
+		public List<SprintPhase> SprintPhases { get; }
 		private ProjectMember creator;
 
 		public Project(int id, string name, string description, ProjectMember creator)
@@ -20,9 +20,9 @@ namespace AvansOps {
 			Name = name;
 			Description = description;
 			this.creator = creator;
-			backLogItems = new List<BackLogItem>();
-			sprints = new List<Sprint>();
-			sprintPhases = new List<SprintPhase>();
+			BackLogItems = new List<BackLogItem>();
+			Sprints = new List<Sprint>();
+			SprintPhases = new List<SprintPhase>();
 			repository = new Repository(this);
 		}
 
@@ -33,48 +33,54 @@ namespace AvansOps {
 
 		public void AddBackLogItem(BackLogItem backLogItem)
 		{
-			backLogItems.Add(backLogItem);
+			BackLogItems.Add(backLogItem);
 		}
 
 		public Sprint AddSprint(SprintType sprintType, DateTime start, DateTime end, ProjectMember creator)
 		{
-			Sprint sprint = SprintFactory.CreateSprint(sprintType, start, end, creator);
-			sprints.Add(sprint);
+			Sprint sprint = null;
+
+            switch (sprintType)
+            {
+                case SprintType.Review:
+					sprint = SprintFactory.CreateReviewSprint(start, end, creator);
+					break;
+                case SprintType.Release:
+					sprint = SprintFactory.CreateReleaseSprint(repository, start, end, creator);
+					break;
+                default:
+                    break;
+            }
+
+			Sprints.Add(sprint);
 			return sprint;
 		}
 
 		public SprintBackLogItem AddBackLogItemToSprintBackLog(BackLogItem backLogItem, Sprint sprint)
 		{
 			SprintBackLogItem item = sprint.AddSprintBacklogItem(backLogItem);
-			sprintPhases[0].PlaceItem(item, null);
+			SprintPhases[0].PlaceItem(item, null);
 			return item;
 		}
 
 		public void AddPhase(SprintPhase phase)
 		{
-			sprintPhases.Add(phase);
-		}
-
-		public List<SprintPhase> GetPhases()
-		{
-			return sprintPhases;
+			SprintPhases.Add(phase);
 		}
 
 		public SprintPhase GetPhase(string name)
 		{
-			return sprintPhases.First(x => x.Name.ToLower() == name.ToLower());
+			return SprintPhases.First(x => x.Name.ToLower() == name.ToLower());
 		}
 
 		public SprintPhase GetPhase(int id)
 		{
-			return sprintPhases.First(x => x.Id == id);
+			return SprintPhases.First(x => x.Id == id);
 		}
 
-
-		public void MoveSprintBackLogItemToPhase(ProjectMember projectMember, SprintBackLogItem sprintBackLogItem,
-			SprintPhase phase)
+		public void MoveSprintBackLogItemToPhase(ProjectMember projectMember, SprintBackLogItem sprintBackLogItem, SprintPhase phase)
 		{
-			if (!phase.GetRolesAuthorized().Any(x => projectMember.Roles.Any(y => y == x)))
+			if (!phase.RolesAuthorized.Any(x => projectMember.Roles.Any(y => y == x)))
 			{
 				Console.WriteLine("Not authorized");
 				return;
@@ -82,7 +88,7 @@ namespace AvansOps {
 
 			SprintPhase sprintPhaseFrom = null;
 
-			foreach (var x in sprintPhases.Where(x => x.GetSprintBackLogItems().Contains(sprintBackLogItem)))
+			foreach (var x in SprintPhases.Where(x => x.SprintBackLogItems.Contains(sprintBackLogItem)))
 			{
 				sprintPhaseFrom = x;
 				x.RemoveItem(sprintBackLogItem);
@@ -103,24 +109,12 @@ namespace AvansOps {
 
 		public void FinishCurrentSprint()
 		{
-			throw new System.NotImplementedException("Not implemented");
+			GetCurrentSprint().Finish();
 		}
 
 		public Sprint GetCurrentSprint()
 		{
-			return sprints.First(sprint => sprint.SprintState == SprintState.OnGoing);
+			return Sprints.First(sprint => sprint.SprintState == SprintState.OnGoing);
 		}
-
-		public List<BackLogItem> GetBacklogItems()
-		{
-			return backLogItems;
-		}
-
-		public List<Sprint> GetSprints()
-		{
-			return sprints;
-		}
-
 	}
-
 }

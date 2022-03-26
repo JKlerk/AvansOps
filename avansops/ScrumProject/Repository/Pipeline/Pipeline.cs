@@ -9,6 +9,7 @@ namespace AvansOps
 		private Repository repository;
 		private List<IPipelinePhase> phases;
 		public Sprint Sprint { get; }
+		public bool IsFinished { get; private set; }
 
 		public bool IsRunning { get; private set; }
 
@@ -48,6 +49,7 @@ namespace AvansOps
 
 		private void FinishPipeline() 
 		{
+			IsFinished = true;
 			repository.Project.FinishCurrentSprint();
 		}
 
