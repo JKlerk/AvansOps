@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj": {}
+    "C:\\Users\\joeyd\\RiderProjects\\avansops\\AvansOps\\AvansOps.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj": {
+    "C:\\Users\\joeyd\\RiderProjects\\avansops\\AvansOps\\AvansOps.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj",
+        "projectUniqueName": "C:\\Users\\joeyd\\RiderProjects\\avansops\\AvansOps\\AvansOps.csproj",
         "projectName": "AvansOps",
-        "projectPath": "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\AvansOps.csproj",
+        "projectPath": "C:\\Users\\joeyd\\RiderProjects\\avansops\\AvansOps\\AvansOps.csproj",
         "packagesPath": "C:\\Users\\joeyd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeyd\\RiderProjects\\AvansOps\\AvansOps\\obj\\",
+        "outputPath": "C:\\Users\\joeyd\\RiderProjects\\avansops\\AvansOps\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joeyd\\AppData\\Roaming\\NuGet\\NuGet.Config"

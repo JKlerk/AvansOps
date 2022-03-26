@@ -2,9 +2,9 @@ using System;
 
 namespace AvansOps {
 	public class User {
-		private string FirstName { get; }
-		private string LastName { get; }
-		private string Email { get; }
+		public string FirstName { get; }
+		public string LastName { get; }
+		public string Email { get; }
 
 		public User(string firstName, string lastName, string email)
 		{

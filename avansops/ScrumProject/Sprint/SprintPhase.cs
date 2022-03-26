@@ -39,10 +39,15 @@ namespace AvansOps {
 		{
 			strategiesPlaceItem.Add(strategyPlaceItem);
 		}
-		
-		
+
 		public List<Role> GetRolesAuthorized() {
 			return rolesAuthorized;
 		}
+
+		public List<StrategyPlaceItem> GetStrategiesPlaceItem()
+		{
+			return strategiesPlaceItem;
+		}
+		
 	}
 }

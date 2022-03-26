@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using AvansOps;
 using Xunit;
 
-public class UnitTest1
+public class UseCaseTests
 {
     [Fact]
     public void Test_US_1()
