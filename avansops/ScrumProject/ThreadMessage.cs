@@ -7,13 +7,20 @@ namespace AvansOps {
 		private DateTime dateTime;
 
 		private ProjectMember projectMember;
-		private Thread[] threads;
-		
+
+		public ThreadMessage(string message, ProjectMember projectMember)
+		{
+			id = 1;
+			this.message = message;
+			dateTime = DateTime.Now;
+			this.projectMember = projectMember;
+		}
+
 		public string GetMessage() {
-			return this.message;
+			return message;
 		}
 		public DateTime GetDateTime() {
-			return this.dateTime;
+			return dateTime;
 		}
 	}
 

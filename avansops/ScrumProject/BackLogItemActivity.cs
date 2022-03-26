@@ -7,16 +7,26 @@ namespace AvansOps {
 		private string description;
 
 		private ProjectMember projectMember;
-		private BackLogItem[] backLogItems;
-		
-		public BackLogItem GetBackLogItem() {
-			throw new System.NotImplementedException("Not implemented");
+		private BackLogItem backLogItem;
+
+		public BackLogItemActivity(int id, string name, string description, ProjectMember projectMember, BackLogItem backLogItem)
+		{
+			this.id = id;
+			this.name = name;
+			this.description = description;
+			this.projectMember = projectMember;
+			this.backLogItem = backLogItem;
+		}
+
+		public BackLogItem GetBackLogItem()
+		{
+			return backLogItem;
 		}
 		public string GetName() {
-			return this.name;
+			return name;
 		}
 		public string GetDescription() {
-			return this.description;
+			return description;
 		}
 	}
 

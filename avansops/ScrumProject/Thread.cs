@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace AvansOps {
 	public class Thread {
@@ -6,19 +7,25 @@ namespace AvansOps {
 		private string name;
 		private string description;
 		private ProjectMember creator;
-		
-		private ThreadMessage threadMessage;
+		private List<ThreadMessage> threadMessages;
+		private BackLogItem backLogItem;
 
-		private BackLogItem[] backLogItems;
+		public Thread(int id, string name, string description, ProjectMember creator)
+		{
+			this.id = id;
+			this.name = name;
+			this.description = description;
+			this.creator = creator;
+		}
 
-		public void CreateMessage(ref string message, ref ProjectMember projectMember) {
-			throw new System.NotImplementedException("Not implemented");
+		public void CreateMessage(string message, ProjectMember projectMember) {
+			threadMessages.Add(new ThreadMessage(message, projectMember));
 		}
 		public string GetName() {
-			return this.name;
+			return name;
 		}
 		public string GetDescription() {
-			return this.description;
+			return description;
 		}
 	}
 
