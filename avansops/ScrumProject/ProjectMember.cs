@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using AvansOps1.Notification;
+using AvansOps.Notification;
 
 namespace AvansOps {
 	public class ProjectMember {

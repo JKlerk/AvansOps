@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using AvansOps;
 
-namespace AvansOps1.Notification {
+namespace AvansOps.Notification {
 	public class NotificationSlackProxy : INotificationStrategy
 	{
 		public List<string> Messages { get; }

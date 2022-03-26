@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AvansOps;
+using AvansOps.Notification;
 using Xunit;
 
 namespace AvansOps.Tests
