@@ -42,11 +42,10 @@ namespace AvansOps {
 
 			var doneFase = new SprintPhase(5, "Tested and done", new List<Role>()
 			{
-				Role.ScrumMaster,
-				Role.Developer,
-				Role.Tester
+				Role.ScrumMaster
 			});
 			doneFase.AddStrategyPlaceItem(new SetBackLogItemToDone());
+			doneFase.AddStrategyCanPlaceItem(new StrategyCanPlaceItemMustBeDone());
 			project.AddPhase(doneFase);
 
 			return project;

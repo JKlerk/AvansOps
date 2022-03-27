@@ -219,7 +219,14 @@ namespace AvansOps.Tests
         [Fact]
         public void Test_US_13()
         {
-            // TODO: Upload
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() { Role.ScrumMaster }, notificationStrategy);
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            SprintReview sprint = (SprintReview)project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddDays(2), member);
+
+            sprint.UploadReviewDoc(new ReviewDoc("test"));
+
+            Assert.True(sprint.SprintState == SprintState.Finished);
         }
         
         [Fact]
@@ -517,7 +524,6 @@ namespace AvansOps.Tests
         [Fact]
         public void Test_US_33()
         {
-            // TODO: Ali doing this
             var notificationStrategy = new NotificationSlackProxy();
             var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
@@ -527,7 +533,18 @@ namespace AvansOps.Tests
             project.AddBackLogItem(backlogItem);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
-            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("Todo"));
+            var sprintPhase = project.SprintPhases[project.SprintPhases.Count - 1];
+
+            try
+            {
+                project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, sprintPhase);
+                Assert.True(false);
+            }
+            catch
+            {
+                Assert.True(true);
+
+            }
         }
 
         [Fact]
