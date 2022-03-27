@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using AvansOps.Notification;
 using AvansOps;
 using AvansOps.ScrumProject;
-using AvansOps.ScrumProject.Repository;
+using AvansOps.ScrumProject.RepositoryScrum;
 using AvansOps.User;
 using Xunit;
 

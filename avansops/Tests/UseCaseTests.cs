@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using AvansOps;
 using AvansOps.Notification;
 using AvansOps.ScrumProject;
-using AvansOps.ScrumProject.Repository;
-using AvansOps.ScrumProject.Repository.Pipeline;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.RepositoryScrum;
+using AvansOps.ScrumProject.RepositoryScrum.PipelineScrum;
+using AvansOps.ScrumProject.SprintScrum;
 using AvansOps.User;
 using Xunit;
 

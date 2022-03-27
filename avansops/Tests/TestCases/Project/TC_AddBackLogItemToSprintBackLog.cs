@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using AvansOps.Notification;
 using AvansOps.ScrumProject;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.SprintScrum;
 using AvansOps.User;
 using Xunit;
 
@@ -20,7 +20,7 @@ namespace AvansOps.Tests.TestCases.Project
             BackLogItem backLogItem = new BackLogItem(0, "Test", "Test");
             project.AddBackLogItem(backLogItem);
 
-            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+            ScrumProject.SprintScrum.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
             project.AddBackLogItemToSprintBackLog(backLogItem, sprint);
 

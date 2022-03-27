@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using AvansOps.Notification;
 using AvansOps.ScrumProject;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.SprintScrum;
+using AvansOps.TeamReportScrum;
 using AvansOps.User;
 using Xunit;
 
@@ -29,12 +30,12 @@ namespace AvansOps.Tests.TestCases.TeamReportGenerator
             backLogItemDev.SetProjectMember(developerMember);
             backLogItemTest.SetProjectMember(testerMember);
 
-            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), creatorMember);
+            ScrumProject.SprintScrum.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), creatorMember);
 
             project.AddBackLogItemToSprintBackLog(backLogItemDev, sprint);
             project.AddBackLogItemToSprintBackLog(backLogItemTest, sprint);
 
-            TeamReport.TeamReport report = TeamReport.TeamReportGenerator.GenerateReport(project, sprint);
+            TeamReport report = TeamReportScrum.TeamReportGenerator.GenerateReport(project, sprint);
 
             Assert.NotNull(report);
             Assert.True(report.Elements.Count == 3);

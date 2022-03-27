@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using AvansOps.Notification;
 using AvansOps.ScrumProject;
-using AvansOps.ScrumProject.Repository.Pipeline;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.RepositoryScrum.PipelineScrum;
+using AvansOps.ScrumProject.SprintScrum;
 using AvansOps.User;
 using Xunit;
 
@@ -23,7 +23,7 @@ namespace AvansOps.Tests.TestCases.Pipeline
 
             SprintRelease sprint = (SprintRelease)project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
-            ScrumProject.Repository.Pipeline.Pipeline pipeline = project.GetRepository().GetPipeline(sprint);
+            ScrumProject.RepositoryScrum.PipelineScrum.Pipeline pipeline = project.GetRepository().GetPipeline(sprint);
             int phaseCount = pipeline.Phases.Count;
 
             pipeline.AddPhase(new PipelinePhaseFail());

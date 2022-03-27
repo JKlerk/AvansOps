@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using AvansOps.Notification;
 using AvansOps.ScrumProject;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.SprintScrum;
 using AvansOps.User;
 using Xunit;
 
@@ -22,7 +22,7 @@ namespace AvansOps.Tests.TestCases.Pipeline
 
             SprintRelease sprint = (SprintRelease)project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
-            ScrumProject.Repository.Pipeline.Pipeline pipeline = project.GetRepository().GetPipeline(sprint);
+            ScrumProject.RepositoryScrum.PipelineScrum.Pipeline pipeline = project.GetRepository().GetPipeline(sprint);
             pipeline.Run();
 
             Assert.True(pipeline.IsFinished);
@@ -41,7 +41,7 @@ namespace AvansOps.Tests.TestCases.Pipeline
 
             SprintRelease sprint = (SprintRelease)project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
-            ScrumProject.Repository.Pipeline.Pipeline pipeline = project.GetRepository().GetPipeline(sprint);
+            ScrumProject.RepositoryScrum.PipelineScrum.Pipeline pipeline = project.GetRepository().GetPipeline(sprint);
             pipeline.Run();
 
             Assert.True(pipeline.IsFinished);

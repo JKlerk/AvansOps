@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.RepositoryScrum;
+using AvansOps.ScrumProject.SprintScrum;
 
 namespace AvansOps.ScrumProject {
 	public class Project
@@ -10,8 +11,8 @@ namespace AvansOps.ScrumProject {
 		public string Name { get; }
 		public string Description { get; }
 		public List<BackLogItem> BackLogItems { get; }
-		public List<Sprint.Sprint> Sprints { get; }
-		private Repository.Repository repository;
+		public List<Sprint> Sprints { get; }
+		private Repository repository;
 		public List<SprintPhase> SprintPhases { get; }
 		private ProjectMember creator;
 
@@ -22,9 +23,9 @@ namespace AvansOps.ScrumProject {
 			Description = description;
 			this.creator = creator;
 			BackLogItems = new List<BackLogItem>();
-			Sprints = new List<Sprint.Sprint>();
+			Sprints = new List<Sprint>();
 			SprintPhases = new List<SprintPhase>();
-			repository = new Repository.Repository(this);
+			repository = new Repository(this);
 		}
 
 		public void AddBackLogItem(BackLogItem backLogItem)
@@ -33,9 +34,9 @@ namespace AvansOps.ScrumProject {
 			BackLogItems.Add(backLogItem);
 		}
 
-		public Sprint.Sprint AddSprint(SprintType sprintType, DateTime start, DateTime end, ProjectMember creator)
+		public Sprint AddSprint(SprintType sprintType, DateTime start, DateTime end, ProjectMember creator)
 		{
-			Sprint.Sprint sprint = null;
+			Sprint sprint = null;
 
             switch (sprintType)
             {
@@ -51,7 +52,7 @@ namespace AvansOps.ScrumProject {
 			return sprint;
 		}
 
-		public SprintBackLogItem AddBackLogItemToSprintBackLog(BackLogItem backLogItem, Sprint.Sprint sprint)
+		public SprintBackLogItem AddBackLogItemToSprintBackLog(BackLogItem backLogItem, Sprint sprint)
 		{
 			SprintBackLogItem item = sprint.AddSprintBacklogItem(backLogItem);
 			SprintPhases[0].PlaceItem(item, null);
@@ -93,7 +94,7 @@ namespace AvansOps.ScrumProject {
 			phase.PlaceItem(sprintBackLogItem, sprintPhaseFrom);
 		}
 
-		public Sprint.Sprint GetCurrentSprint()
+		public Sprint GetCurrentSprint()
 		{
 			try
 			{
@@ -105,7 +106,7 @@ namespace AvansOps.ScrumProject {
 			}
 		}
 
-		public Repository.Repository GetRepository()
+		public Repository GetRepository()
 		{
 			return repository;
 		}
@@ -113,7 +114,7 @@ namespace AvansOps.ScrumProject {
 
 		public void StartPipelineCurrentSprint()
 		{
-			Sprint.Sprint currentSprint = GetCurrentSprint();
+			Sprint currentSprint = GetCurrentSprint();
 
 			if (currentSprint.GetType() == typeof(SprintReview))
             {

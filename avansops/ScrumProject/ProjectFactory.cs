@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.SprintScrum;
 using AvansOps.User;
 
 namespace AvansOps.ScrumProject {

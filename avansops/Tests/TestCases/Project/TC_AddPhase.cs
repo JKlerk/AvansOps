@@ -15,7 +15,7 @@ namespace AvansOps.Tests.TestCases.Project
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
             ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            project.AddPhase(new ScrumProject.Sprint.SprintPhase(999, "TestPhase", new List<Role>() { Role.Developer, Role.ScrumMaster, Role.Tester }));
+            project.AddPhase(new ScrumProject.SprintScrum.SprintPhase(999, "TestPhase", new List<Role>() { Role.Developer, Role.ScrumMaster, Role.Tester }));
 
             var phase = project.GetPhase("TestPhase");
             Assert.NotNull(phase);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using AvansOps.Notification;
 using AvansOps.ScrumProject;
-using AvansOps.ScrumProject.Sprint;
+using AvansOps.ScrumProject.SprintScrum;
 using AvansOps.User;
 using Xunit;
 
@@ -17,13 +17,13 @@ namespace AvansOps.Tests.TestCases.Project
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
             ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            ScrumProject.Sprint.SprintPhase phase = new ScrumProject.Sprint.SprintPhase(999, "TestPhase", new List<Role>() { Role.ScrumMaster });
+            ScrumProject.SprintScrum.SprintPhase phase = new ScrumProject.SprintScrum.SprintPhase(999, "TestPhase", new List<Role>() { Role.ScrumMaster });
             project.AddPhase(phase);
 
             BackLogItem backLogItem = new BackLogItem(0, "Test", "Test");
             project.AddBackLogItem(backLogItem);
 
-            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+            ScrumProject.SprintScrum.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
             SprintBackLogItem sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backLogItem, sprint);
             project.MoveSprintBackLogItemToPhase(projectMember, sprintBackLogItem, project.GetPhase("TestPhase"));
@@ -38,13 +38,13 @@ namespace AvansOps.Tests.TestCases.Project
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.Tester }, new NotificationEmailProxy());
             ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            ScrumProject.Sprint.SprintPhase phase = new ScrumProject.Sprint.SprintPhase(999, "TestPhase", new List<Role>() { Role.ScrumMaster });
+            ScrumProject.SprintScrum.SprintPhase phase = new ScrumProject.SprintScrum.SprintPhase(999, "TestPhase", new List<Role>() { Role.ScrumMaster });
             project.AddPhase(phase);
 
             BackLogItem backLogItem = new BackLogItem(0, "Test", "Test");
             project.AddBackLogItem(backLogItem);
 
-            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+            ScrumProject.SprintScrum.Sprint sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
             SprintBackLogItem sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backLogItem, sprint);
             project.MoveSprintBackLogItemToPhase(projectMember, sprintBackLogItem, project.GetPhase("TestPhase"));
