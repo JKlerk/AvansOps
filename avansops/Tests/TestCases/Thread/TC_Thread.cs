@@ -30,7 +30,7 @@ namespace AvansOps.Tests.TestCases.Thread
             Assert.True(thread.GetThreadMessages().Count == 1);
             Assert.True(thread.GetThreadMessages()[0].Id == 1);
             Assert.True(thread.GetThreadMessages()[0].GetMessage() == "My new message");
-            Assert.True(thread.GetThreadMessages()[0].GetDateTime() is DateTime);
+            Assert.True(thread.GetThreadMessages()[0].GetDateTime() != DateTime.Now);
         }
     }
 }

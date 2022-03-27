@@ -102,7 +102,7 @@ namespace AvansOps.ScrumProject {
 			}
 			catch (Exception e)
 			{
-				throw new Exception("No sprint found");
+				throw new Exception(e.Message);
 			}
 		}
 

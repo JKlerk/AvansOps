@@ -167,12 +167,6 @@ namespace AvansOps.Tests
         }
 
         [Fact]
-        public void Test_US_10()
-        {
-            // TODO: 
-        }
-
-        [Fact]
         public void Test_US_11()
         {
             var notificationStrategy = new NotificationSlackProxy();
@@ -418,7 +412,7 @@ namespace AvansOps.Tests
             var thread = new Thread(1, "Thread name", "Description", member);
             backlogItem.AddThread(thread);
             thread.CreateMessage("Hello I need help", member);
-            Assert.Same(backlogItem.GetThreads()[0].GetThreadMessages()[0].GetMessage(),"Hello I need help");
+            Assert.Same("Hello I need help", backlogItem.GetThreads()[0].GetThreadMessages()[0].GetMessage());
         }
         
         [Fact]
@@ -640,6 +634,7 @@ namespace AvansOps.Tests
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var repo = project.GetRepository();
             repo.Commit(new Commit(DateTime.Now, "My new commit", member));
+            Assert.NotEmpty(repo.GetCommits());
         }
     }
 }

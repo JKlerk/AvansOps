@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6718e955-b6dd-4c45-8157-a0e62526edf4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvansOps/Tests/UseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/UseCaseTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,7 @@
       <workItem from="1648404374738" duration="40000" />
       <workItem from="1648404429761" duration="48000" />
       <workItem from="1648404497611" duration="935000" />
-      <workItem from="1648405634937" duration="2815000" />
+      <workItem from="1648405634937" duration="3495000" />
     </task>
     <servers />
   </component>
@@ -53,10 +54,10 @@
     <option name="version" value="3" />
   </component>
   <component name="UnitTestsCoverage.Settings">
-    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="coveragePercentColumnWidth" value="118" />
     <option name="sortOrder" value="DESCENDING" />
     <option name="sortedColumn" value="1" />
-    <option name="symbolColumnWidth" value="483" />
+    <option name="symbolColumnWidth" value="269" />
     <coverage-tree-state>
       <expand>
         <path>
@@ -73,6 +74,66 @@
           <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="User 100% 0/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="User 100% 0/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="User 100% 0/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Notification 100% 0/66" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="ScrumProject 98% 14/643" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TeamReportScrum 69% 23/75" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TeamReportScrum 69% 23/75" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TeamReport 100% 0/16" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TeamReportScrum 69% 23/75" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TeamReportElement 100% 0/7" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="AvansOps 95% 37/793" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TeamReportScrum 69% 23/75" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="TeamReportGenerator 91% 3/32" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
       <select />
