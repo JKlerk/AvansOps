@@ -46,10 +46,12 @@ namespace AvansOps {
 		}
 		public void SetName(string name)
 		{
+			if (sprintBackLogItem != null) throw new Exception("Cannot edit item that is in a sprint");
 			this.name = name;
 		}
 		public void SetDescription(string description)
 		{
+			if (sprintBackLogItem != null) throw new Exception("Cannot edit item that is in a sprint");
 			this.description = description;
 		}
 		

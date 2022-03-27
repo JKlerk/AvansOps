@@ -17,6 +17,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
             project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
             
             var sprintItem = new SprintBackLogItem(1, project.GetCurrentSprint(), backlogItem);
+            Assert.True(sprintItem.Id == backlogItem.Id);
             Assert.True(sprintItem.BackLogItem.GetName() == backlogItem.GetName());
             Assert.True(sprintItem.Sprint.SprintState == project.GetCurrentSprint().SprintState);
         }

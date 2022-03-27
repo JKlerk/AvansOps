@@ -5,7 +5,7 @@ using System.Linq;
 namespace AvansOps {
 	public class Project
 	{
-		private int Id { get; }
+		public int Id { get; }
 		public string Name { get; }
 		public string Description { get; }
 		public List<BackLogItem> BackLogItems { get; }
@@ -94,25 +94,27 @@ namespace AvansOps {
 
 		public Sprint GetCurrentSprint()
 		{
-			return Sprints.First(sprint => sprint.SprintState == SprintState.OnGoing);
+			try
+			{
+				return Sprints.First(sprint => sprint.SprintState == SprintState.OnGoing);
+			}
+			catch (Exception e)
+			{
+				throw new Exception("No sprint found");
+			}
 		}
 
 		public Repository GetRepository()
 		{
 			return repository;
 		}
-
-		public void FinishCurrentSprint()
-		{
-			var sprint = GetCurrentSprint();
-			sprint.Finish();
-		}
+		
 
 		public void StartPipelineCurrentSprint()
 		{
 			Sprint currentSprint = GetCurrentSprint();
 
-			if (currentSprint.SprintState != SprintState.OnGoing)
+			if (currentSprint.GetType() == typeof(SprintReview))
             {
 				throw new Exception("Sprint is already closed");
             }
