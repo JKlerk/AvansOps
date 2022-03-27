@@ -5,7 +5,7 @@ namespace AvansOps
 {
 	public abstract class Sprint
 	{
-		private int id;
+		public int Id { get; }
 		public SprintState SprintState { get; protected set; }
 		public List<SprintBackLogItem> SprintBackLogItems { get; } 
 		public List<ProjectMember> ProjectMembers { get; }
@@ -15,7 +15,7 @@ namespace AvansOps
 
 		public Sprint(int id, DateTime dateStart, DateTime dateEnd)
 		{
-			this.id = id;
+			Id = id;
 			DateStart = dateStart;
 			DateEnd = dateEnd;
 			SprintBackLogItems = new List<SprintBackLogItem>();
@@ -35,7 +35,7 @@ namespace AvansOps
 			}
 		}
 
-		protected virtual void Finish()
+		public void Finish()
         {
 			if (SprintState == SprintState.OnGoing)
             {
@@ -50,6 +50,7 @@ namespace AvansOps
 		public SprintBackLogItem AddSprintBacklogItem(BackLogItem backLogItem)
 		{
 			var item = CreateSprintBackLogItem(backLogItem);
+			if (SprintBackLogItems.Exists(x => x.Id == backLogItem.Id)) throw new Exception("SprintBacklog item already exists");
 			SprintBackLogItems.Add(item);
 			return item;
 		}

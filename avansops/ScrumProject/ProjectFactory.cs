@@ -23,13 +23,15 @@ namespace AvansOps {
 				Role.Developer,
 				Role.Tester
 			}));
-			
-			project.AddPhase(new SprintPhase(3, "Ready for testing", new List<Role>()
+
+			var testPhase = new SprintPhase(3, "Ready for testing", new List<Role>()
 			{
 				Role.ScrumMaster,
 				Role.Developer,
 				Role.Tester
-			}));
+			});
+			testPhase.AddStrategyPlaceItem(new NotifyRole(new List<Role>() {Role.Tester}, project, "Item moved to testing"));
+			project.AddPhase(testPhase);
 			
 			project.AddPhase(new SprintPhase(4, "Testing", new List<Role>()
 			{

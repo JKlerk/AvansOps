@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AvansOps {
 	public class BackLogItem {
-		private int id;
+		public int Id { get; }
 		private string name;
 		private string description;
 		private bool isDone;
@@ -16,7 +16,7 @@ namespace AvansOps {
 
 		public BackLogItem(int id, string name, string description)
 		{
-			this.id = id;
+			Id = id;
 			this.name = name;
 			this.description = description;
 			isDone = false;

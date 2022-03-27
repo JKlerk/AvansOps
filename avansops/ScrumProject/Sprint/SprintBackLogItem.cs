@@ -2,14 +2,14 @@ using System;
 
 namespace AvansOps {
 	public class SprintBackLogItem {
-		private int id;
-		
+		public int Id { get; }
+
 		public Sprint Sprint { get; }
 		public BackLogItem BackLogItem { get; }
 
 		public SprintBackLogItem(int id, Sprint sprint, BackLogItem backLogItem)
 		{
-			this.id = id;
+			this.Id = id;
 			Sprint = sprint;
 			BackLogItem = backLogItem;
 		}

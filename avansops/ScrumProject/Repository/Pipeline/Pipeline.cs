@@ -58,6 +58,11 @@ namespace AvansOps
 			AdvancePhase();
 		}
 
+        public void AddPhase(IPipelinePhase phase)
+        {
+	        phases.Add(phase);
+        }
+
         void IPipelinePhaseSubscriber.Error(string message)
         {
 			Console.WriteLine(message);

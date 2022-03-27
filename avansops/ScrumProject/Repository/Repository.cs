@@ -53,5 +53,10 @@ namespace AvansOps
 		{
 			return commits;
 		}
+
+		public List<Pipeline> GetPipelines()
+		{
+			return pipelines;
+		}
 	}
 }

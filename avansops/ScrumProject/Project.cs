@@ -5,7 +5,7 @@ using System.Linq;
 namespace AvansOps {
 	public class Project
 	{
-		private int id;
+		private int Id { get; }
 		public string Name { get; }
 		public string Description { get; }
 		public List<BackLogItem> BackLogItems { get; }
@@ -16,7 +16,7 @@ namespace AvansOps {
 
 		public Project(int id, string name, string description, ProjectMember creator)
 		{
-			this.id = id;
+			Id = id;
 			Name = name;
 			Description = description;
 			this.creator = creator;
@@ -28,6 +28,7 @@ namespace AvansOps {
 
 		public void AddBackLogItem(BackLogItem backLogItem)
 		{
+			if (BackLogItems.Exists(x => x.Id == backLogItem.Id)) throw new Exception("Backlog item already exists");
 			BackLogItems.Add(backLogItem);
 		}
 
@@ -99,6 +100,18 @@ namespace AvansOps {
 		public Repository GetRepository()
 		{
 			return repository;
+		}
+
+		public void FinishCurrentSprint()
+		{
+			var sprint = GetCurrentSprint();
+			sprint.Finish();
+		}
+
+		public void StartPipelineCurrentSprint()
+		{
+			var repo = GetRepository();
+			repo.RunPipeline(GetCurrentSprint());
 		}
 	}
 }
