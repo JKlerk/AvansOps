@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AvansOps 
 {
@@ -27,6 +28,10 @@ namespace AvansOps
 		{
 			if (SprintState == SprintState.OnGoing)
 			{
+				foreach (var member in ProjectMembers.Where(x => x.Roles.Any(y => y is Role.ScrumMaster or Role.ProductOwner)))
+				{
+					NotificationManager.Notify(member, "Sprint has been canceled");
+				}
 				SprintState = SprintState.Canceled;
 			}
 			else
@@ -38,6 +43,10 @@ namespace AvansOps
 		public void Finish()
         {
 	        SprintState = SprintState.Finished;
+	        foreach (var member in ProjectMembers.Where(x => x.Roles.Any(y => y is Role.ScrumMaster or Role.ProductOwner)))
+	        {
+		        NotificationManager.Notify(member, "Sprint has been finished");
+	        }
         }
 
 		public SprintBackLogItem AddSprintBacklogItem(BackLogItem backLogItem)

@@ -5,7 +5,7 @@ namespace AvansOps {
 		Developer,
 		ScrumMaster,
 		Tester,
-
+		ProductOwner
 	}
 
 }

@@ -66,7 +66,12 @@ namespace AvansOps.Tests
         [Fact]
         public void Test_US_4()
         {
-            // TODO: Auto mark as finished
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            sprint.Finish();
+            Assert.True(sprint.SprintState == SprintState.Finished);
         }
 
         [Fact]
@@ -106,22 +111,26 @@ namespace AvansOps.Tests
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             var repo = project.GetRepository();
-            // TODO: Check pipelines
+            Assert.Same(repo.GetPipelines()[0].Phases[0].GetType(), typeof(PipelinePhasePackage));
+            Assert.Same(repo.GetPipelines()[0].Phases[1].GetType(), typeof(PipelinePhaseBuild));
+            Assert.Same(repo.GetPipelines()[0].Phases[2].GetType(), typeof(PipelinePhaseTest));
+            Assert.Same(repo.GetPipelines()[0].Phases[3].GetType(), typeof(PipelinePhaseAnalyse));
+            Assert.Same(repo.GetPipelines()[0].Phases[4].GetType(), typeof(PipelinePhaseDeploy));
+            Assert.Same(repo.GetPipelines()[0].Phases[5].GetType(), typeof(PipelinePhaseUtility));
         }
 
         [Fact]
         public void Test_US_8()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Tester}, notificationStrategy);
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
         
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             sprint.Cancel();
-
-            // TODO: Verify notification
+            Assert.NotEmpty(notificationStrategy.Messages);
         }
 
         [Fact]
@@ -162,11 +171,12 @@ namespace AvansOps.Tests
         public void Test_US_11()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Tester}, notificationStrategy);
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             project.StartPipelineCurrentSprint();
             Assert.True(project.GetRepository().GetPipelines()[0].IsFinished);
+            Assert.NotEmpty(notificationStrategy.Messages);
         }
         
         [Fact]
