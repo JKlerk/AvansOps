@@ -42,7 +42,7 @@ namespace AvansOps
             {
                 Assert.True(true);
             }
-
+            Assert.True(sprint.ReviewDoc.Text == "goodreview");
             Assert.True(sprint.SprintState != SprintState.Canceled);
         }
     }
