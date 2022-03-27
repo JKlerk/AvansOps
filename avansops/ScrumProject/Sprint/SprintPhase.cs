@@ -8,6 +8,7 @@ namespace AvansOps {
 		public List<SprintBackLogItem> SprintBackLogItems { get; }
 		public List<Role> RolesAuthorized { get; }
 		public List<IStrategyPlaceItem> StrategiesPlaceItem { get; }
+		public List<IStrategyCanPlaceItem> StrategiesCanPlaceItem { get; }
 
 		public SprintPhase(int id, string name, List<Role> rolesAuthorized)
 		{
@@ -15,6 +16,7 @@ namespace AvansOps {
 			Name = name;
 			RolesAuthorized = rolesAuthorized;
 			StrategiesPlaceItem = new List<IStrategyPlaceItem>();
+			StrategiesCanPlaceItem = new List<IStrategyCanPlaceItem>();
 			SprintBackLogItems = new List<SprintBackLogItem>();
 		}
 
@@ -24,6 +26,14 @@ namespace AvansOps {
             {
 				throw new Exception("SprintBackLogItem is already placed in this phase");
             }
+
+            foreach (var strategyCanPlaceItem in StrategiesCanPlaceItem)
+            {
+				if (!strategyCanPlaceItem.CanPlaceItem(sprintBackLogItem))
+                {
+					throw new Exception("Cannot place the item in the phase");
+				}
+			}
 
 			SprintBackLogItems.Add(sprintBackLogItem);
 
@@ -46,6 +56,11 @@ namespace AvansOps {
 		public void AddStrategyPlaceItem(IStrategyPlaceItem strategyPlaceItem)
 		{
 			StrategiesPlaceItem.Add(strategyPlaceItem);
+		}
+
+		public void AddStrategyCanPlaceItem(IStrategyCanPlaceItem strategyCanPlaceItem)
+		{
+			StrategiesCanPlaceItem.Add(strategyCanPlaceItem);
 		}
 	}
 }
