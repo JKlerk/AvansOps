@@ -5,7 +5,7 @@ namespace AvansOps {
 	public static class ProjectFactory 
 	{
 		public static Project CreateProject(int id, string name, string description, ProjectMember creator) {
-			Project project =  new Project(id, name, description, creator);
+			Project project = new Project(id, name, description, creator);
 
 			var todoPhase = new SprintPhase(1, "Todo", new List<Role>()
 			{
@@ -39,13 +39,15 @@ namespace AvansOps {
 				Role.Developer,
 				Role.Tester
 			}));
-			
-			project.AddPhase(new SprintPhase(5, "Tested and done", new List<Role>()
+
+			var doneFase = new SprintPhase(5, "Tested and done", new List<Role>()
 			{
 				Role.ScrumMaster,
 				Role.Developer,
 				Role.Tester
-			}));
+			});
+			doneFase.AddStrategyPlaceItem(new SetBackLogItemToDone());
+			project.AddPhase(doneFase);
 
 			return project;
 		}

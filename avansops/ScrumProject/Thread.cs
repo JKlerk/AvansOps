@@ -8,6 +8,7 @@ namespace AvansOps {
 		private readonly string description;
 		private readonly List<ThreadMessage> threadMessages;
 		private ProjectMember creator;
+		public bool BackLogItemIsDone;
 
 		public Thread(int id, string name, string description, ProjectMember creator)
 		{
@@ -16,9 +17,12 @@ namespace AvansOps {
 			this.description = description;
 			this.creator = creator;
 			threadMessages = new List<ThreadMessage>();
+			BackLogItemIsDone = false;
 		}
 
-		public void CreateMessage(string message, ProjectMember projectMember) {
+		public void CreateMessage(string message, ProjectMember projectMember)
+		{
+			if (BackLogItemIsDone) throw new Exception("Backlog item is done, cannot add message");
 			threadMessages.Add(new ThreadMessage(message, projectMember));
 		}
 		public string GetName() {

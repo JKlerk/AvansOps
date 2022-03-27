@@ -25,7 +25,9 @@ namespace AvansOps {
 			threads = new List<Thread>();
 		}
 
-		public void AddThread(Thread thread) {
+		public void AddThread(Thread thread)
+		{
+			if (isDone) throw new Exception("Item is marked as done, you cannot make a thread");
 			threads.Add(thread);
 		}
 		public string GetName() {
@@ -66,6 +68,10 @@ namespace AvansOps {
 		}
 		public void SetToDone()
 		{
+			foreach (var thread in GetThreads())
+			{
+				thread.BackLogItemIsDone = true;
+			}
 			isDone = true;
 		}
 

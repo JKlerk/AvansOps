@@ -317,9 +317,174 @@ namespace AvansOps.Tests
         
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);
-            backlogItem.CreateActivity("New acitvity", "Description", member);
+            backlogItem.CreateActivity("New activity", "Description", member);
+            backlogItem.CreateActivity("New activity2", "Description", member);
+            
+            Assert.NotEmpty(backlogItem.GetBackLogItemActivities());
+        }
         
-            Assert.NotEmpty(notificationStrategy.Messages);
+        [Fact]
+        public void Test_US_24()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            backlogItem.CreateActivity("New activity", "Description", member);
+            Assert.Same(backlogItem.GetBackLogItemActivities()[0].GetProjectMember(), member);
+        }
+        
+        [Fact]
+        public void Test_US_25()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            backlogItem.AddThread(new Thread(1, "Thread name", "Description", member));
+            Assert.NotEmpty(backlogItem.GetThreads());
+        }
+        
+        [Fact]
+        public void Test_US_26()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            var thread = new Thread(1, "Thread name", "Description", member);
+            backlogItem.AddThread(thread);
+            thread.CreateMessage("Hello I need help", member);
+            Assert.Same(backlogItem.GetThreads()[0].GetThreadMessages()[0].GetMessage(),"Hello I need help");
+        }
+        
+        [Fact]
+        public void Test_US_26_1()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            project.AddBackLogItem(backlogItem);
+            var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
+            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("tested and done"));
+
+            var thread = new Thread(1, "Thread name", "Description", member);
+            Assert.Throws<Exception>(() => backlogItem.AddThread(thread));
+        }
+        
+        [Fact]
+        public void Test_US_27()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var owner = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var members = new List<ProjectMember>
+            {
+                new (new User("Firstname", "Lastname", "test@test.com"),
+                    new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy),
+                new (new User("Firstname1", "Lastname", "test@test.com"),
+                    new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy),
+                new (new User("Firstname2", "Lastname", "test@test.com"),
+                    new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy),
+            };
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", owner);
+            project.AddBackLogItem(backlogItem);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), owner);
+
+            for (int i = members.Count; i <= 0; i++)
+            {
+                Assert.Same(sprint.ProjectMembers[i], members[i]);
+            }
+        }
+        
+        [Fact]
+        public void Test_US_28()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            
+            sprint.ProjectMembers[0].Roles = new List<Role>() {Role.Tester};
+            Assert.True(sprint.ProjectMembers[0].Roles[0] == Role.Tester);
+        }
+        
+        [Fact]
+        public void Test_US_29()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            
+            sprint.ProjectMembers[0].Roles = new List<Role>() {Role.ScrumMaster};
+            Assert.True(sprint.ProjectMembers[0].Roles[0] == Role.ScrumMaster);
+        }
+        
+        [Fact]
+        public void Test_US_30()
+        {
+            // TODO: Generate report
+        }
+        
+        [Fact]
+        public void Test_US_31()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            project.AddBackLogItem(backlogItem);
+            var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
+            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("tested and done"));
+            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("ready for testing"));
+            
+            Assert.Same(project.GetPhase("ready for testing").SprintBackLogItems[0], sprintBackLogItem);
+        }
+        
+        [Fact]
+        public void Test_US_32()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            project.AddBackLogItem(backlogItem);
+            var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
+            var thread = new Thread(1, "Thread name", "Description", member);
+            backlogItem.AddThread(thread);
+            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("tested and done"));
+            Assert.Throws<Exception>(() => thread.CreateMessage("Hello I need help", member));
+        }
+
+        [Fact]
+        public void Test_US_33()
+        {
+            // TODO: Ali doing this
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+            backlogItem.CreateActivity("Activity 1", "Description", member);
+
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
+            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("Todo"));
         }
     }
 }
