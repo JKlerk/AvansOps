@@ -25,7 +25,9 @@ namespace AvansOps {
 			threads = new List<Thread>();
 		}
 
-		public void AddThread(Thread thread) {
+		public void AddThread(Thread thread)
+		{
+			if (isDone) throw new Exception("Item is marked as done, you cannot make a thread");
 			threads.Add(thread);
 		}
 		public string GetName() {
@@ -44,10 +46,12 @@ namespace AvansOps {
 		}
 		public void SetName(string name)
 		{
+			if (sprintBackLogItem != null) throw new Exception("Cannot edit item that is in a sprint");
 			this.name = name;
 		}
 		public void SetDescription(string description)
 		{
+			if (sprintBackLogItem != null) throw new Exception("Cannot edit item that is in a sprint");
 			this.description = description;
 		}
 		
@@ -66,6 +70,10 @@ namespace AvansOps {
 		}
 		public void SetToDone()
 		{
+			foreach (var thread in GetThreads())
+			{
+				thread.BackLogItemIsDone = true;
+			}
 			isDone = true;
 		}
 
