@@ -49,8 +49,8 @@ namespace AvansOps
 
 		public SprintBackLogItem AddSprintBacklogItem(BackLogItem backLogItem)
 		{
+			if (SprintBackLogItems.Exists(x => x.BackLogItem == backLogItem)) throw new Exception("SprintBacklog item already exists");
 			var item = CreateSprintBackLogItem(backLogItem);
-			if (SprintBackLogItems.Exists(x => x.Id == backLogItem.Id)) throw new Exception("SprintBacklog item already exists");
 			SprintBackLogItems.Add(item);
 			return item;
 		}

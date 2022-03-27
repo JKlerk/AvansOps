@@ -9,7 +9,7 @@ namespace AvansOps {
 
 		public SprintBackLogItem(int id, Sprint sprint, BackLogItem backLogItem)
 		{
-			this.Id = id;
+			Id = id;
 			Sprint = sprint;
 			BackLogItem = backLogItem;
 		}
