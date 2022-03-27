@@ -230,15 +230,17 @@ namespace AvansOps.Tests
         }
         
         [Fact]
-        public void Test_US_14()
-        {
-            // TODO: ?????
-        }
-        
-        [Fact]
         public void Test_US_15()
         {
-            // TODO: Not testable
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
+            Assert.NotEmpty(sprint.SprintBackLogItems);
         }
         
         [Fact]
@@ -420,12 +422,13 @@ namespace AvansOps.Tests
             var notificationStrategy = new NotificationSlackProxy();
             var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
-        
+            backlogItem.SetToDone();
+            
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             project.AddBackLogItem(backlogItem);
             var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
-            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("tested and done"));
+            project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("todo"));
 
             var thread = new Thread(1, "Thread name", "Description", member);
             Assert.Throws<Exception>(() => backlogItem.AddThread(thread));
@@ -484,7 +487,7 @@ namespace AvansOps.Tests
         [Fact]
         public void Test_US_30()
         {
-            // TODO: Generate report
+            // Check TC_Generate Report
         }
         
         [Fact]
@@ -493,10 +496,12 @@ namespace AvansOps.Tests
             var notificationStrategy = new NotificationSlackProxy();
             var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
-        
+            backlogItem.SetToDone();
+            
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             project.AddBackLogItem(backlogItem);
+
             var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
             project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("tested and done"));
             project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("ready for testing"));
@@ -510,13 +515,14 @@ namespace AvansOps.Tests
             var notificationStrategy = new NotificationSlackProxy();
             var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
-        
+            
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             project.AddBackLogItem(backlogItem);
             var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
             var thread = new Thread(1, "Thread name", "Description", member);
             backlogItem.AddThread(thread);
+            backlogItem.SetToDone();
             project.MoveSprintBackLogItemToPhase(member, sprintBackLogItem, project.GetPhase("tested and done"));
             Assert.Throws<Exception>(() => thread.CreateMessage("Hello I need help", member));
         }
@@ -584,7 +590,16 @@ namespace AvansOps.Tests
         [Fact]
         public void Test_US_36()
         {
-            // TODO: Add notification on threadmessage post
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            var thread = new Thread(1, "Thread name", "Description", member);
+            backlogItem.AddThread(thread);
+            thread.CreateMessage("Hello I need help", member);
+            Assert.NotEmpty(notificationStrategy.Messages);
         }
 
         [Fact]

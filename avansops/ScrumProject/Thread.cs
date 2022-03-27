@@ -23,6 +23,7 @@ namespace AvansOps {
 		public void CreateMessage(string message, ProjectMember projectMember)
 		{
 			if (BackLogItemIsDone) throw new Exception("Backlog item is done, cannot add message");
+			NotificationManager.Notify(creator, "New message has been placed by " + projectMember.User.FirstName);
 			threadMessages.Add(new ThreadMessage(message, projectMember));
 		}
 		public string GetName() {
