@@ -1,19 +1,56 @@
 using System;
 
-namespace AvansOps {
-	public class TeamReportGenerator 
+namespace AvansOps 
+{
+	public static class TeamReportGenerator 
 	{
-		private IReportExportStrategy iReportExportStrategy;
-
-		public void GenerateReport(Project project, Sprint sprint) 
+		public static TeamReport GenerateReport(Project project, Sprint sprint) 
 		{
 			TeamReport report = new TeamReport(project, sprint);
-			ExportReport(report);
+
+			AddHeader(report);
+			AddBody(report);
+			AddFooter(report);
+
+			return report;
 		}
 
-		public void ExportReport(TeamReport report) 
+		private static TeamReportElement AddHeader(TeamReport report)
+        {
+			TeamReportElement header = report.CreateElement();
+			header.TextLines.Add(report.Project.Name);
+			header.TextLines.Add(report.Project.Description);
+
+			int sprintNumber = report.Project.Sprints.IndexOf(report.Sprint);
+
+			header.TextLines.Add("Sprint " + sprintNumber.ToString());
+			header.TextLines.Add(report.Sprint.DateStart + " - " + report.Sprint.DateEnd);
+			header.TextLines.Add("--------------------------");
+
+			return header;
+		}
+
+		private static TeamReportElement AddBody(TeamReport report)
 		{
-			iReportExportStrategy.ExportReport(report);
+			TeamReportElement body = report.CreateElement();
+			body.TextLines.Add("BODY");
+			body.TextLines.Add("--------------------------");
+
+			return body;
+		}
+
+		private static TeamReportElement AddFooter(TeamReport report)
+		{
+			TeamReportElement footer = report.CreateElement();
+			footer.TextLines.Add("FOOTER");
+			footer.TextLines.Add("--------------------------");
+
+			return footer;
+		}
+
+		public static void ExportReport(TeamReport report, IReportExportStrategy reportExportStrategy) 
+		{
+			reportExportStrategy.ExportReport(report);
 		}
 	}
 }
