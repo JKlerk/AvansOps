@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
+using AvansOps.ScrumProject.Sprint;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Repository.Pipeline {
 	public static class PipelineFactory {
 		public static Pipeline CreatePipeline(Repository repository, SprintRelease sprint) 
 		{

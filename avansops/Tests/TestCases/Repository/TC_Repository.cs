@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using AvansOps.Notification;
 using AvansOps;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Repository;
+using AvansOps.User;
 using Xunit;
 
 namespace AvansOps.Tests.TestCases.Repository
@@ -12,7 +15,7 @@ namespace AvansOps.Tests.TestCases.Repository
         public void Test_CreateRepository()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var repo = project.GetRepository();
             Assert.Same(repo.Project, project);
@@ -22,7 +25,7 @@ namespace AvansOps.Tests.TestCases.Repository
         public void Test_AddCommit()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var repo = project.GetRepository();
             var now = DateTime.Now;

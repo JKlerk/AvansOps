@@ -1,6 +1,6 @@
 using System;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Repository {
 	public class Commit {
 		public string Message { get; }
 		public DateTime DateTime { get; }

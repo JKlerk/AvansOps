@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using AvansOps.Notification;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 using Xunit;
 
 namespace AvansOps.Tests.TestCases.BacklogItem
@@ -9,7 +13,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
         [Fact]
         public void Test_CreateSprintBacklogItem()
         {
-            var user = new User("testFirst", "testLast", "test@test.com");
+            var user = new User.User("testFirst", "testLast", "test@test.com");
             var projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
             var project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Description");
@@ -25,7 +29,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
         [Fact]
         public void Test_TestSprintItemToDone()
         {
-            var user = new User("testFirst", "testLast", "test@test.com");
+            var user = new User.User("testFirst", "testLast", "test@test.com");
             var projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
             var project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Description");

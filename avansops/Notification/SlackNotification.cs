@@ -1,7 +1,6 @@
-using AvansOps;
-using AvansOps.Notification;
+using AvansOps.ScrumProject;
 
-namespace AvansOps
+namespace AvansOps.Notification
 {
 	public class SlackNotification : INotificationStrategy  {
 		private SlackAdapter slackAdapter;

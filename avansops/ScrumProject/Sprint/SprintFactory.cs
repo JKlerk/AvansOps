@@ -1,6 +1,6 @@
 using System;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Sprint {
 	public static class SprintFactory 
 	{
 		public static Sprint CreateReviewSprint(DateTime start, DateTime end, ProjectMember creator)
@@ -10,7 +10,7 @@ namespace AvansOps {
             return sprint;
         }
 
-        public static Sprint CreateReleaseSprint(Repository repository, DateTime start, DateTime end, ProjectMember creator)
+        public static Sprint CreateReleaseSprint(Repository.Repository repository, DateTime start, DateTime end, ProjectMember creator)
         {
             SprintRelease sprint = new SprintRelease(999, start, end);
             repository.CreatePipeline(sprint);

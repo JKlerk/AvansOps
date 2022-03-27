@@ -1,7 +1,8 @@
-using System;
 using System.Collections.Generic;
+using AvansOps.Notification;
+using AvansOps.User;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Sprint {
 	public class NotifyRole : IStrategyPlaceItem
 	{
 		public List<Role> Roles { get; }

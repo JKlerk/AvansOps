@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AvansOps.ScrumProject.Repository.Pipeline;
+using AvansOps.ScrumProject.Sprint;
 
-namespace AvansOps 
+namespace AvansOps.ScrumProject.Repository 
 {
 	public class Repository 
 	{
-		private List<Pipeline> pipelines;
+		private List<Pipeline.Pipeline> pipelines;
 		private List<Commit> commits;
 
 		public Project Project { get; }
@@ -15,7 +17,7 @@ namespace AvansOps
 		{
 			Project = project;
 			commits = new List<Commit>();
-			pipelines = new List<Pipeline>();
+			pipelines = new List<Pipeline.Pipeline>();
 		}
 
 		public void CreatePipeline(SprintRelease sprintRelease)
@@ -28,9 +30,9 @@ namespace AvansOps
 			commits.Add(commit);
 		}
 
-		public void RunPipeline(Sprint sprint) 
+		public void RunPipeline(Sprint.Sprint sprint) 
 		{
-			foreach (Pipeline pipeline in pipelines.Where(pipeline => pipeline.SprintRelease == sprint))
+			foreach (Pipeline.Pipeline pipeline in pipelines.Where(pipeline => pipeline.SprintRelease == sprint))
 			{
 				pipeline.Run();
 			}
@@ -38,7 +40,7 @@ namespace AvansOps
 
 		public bool IsPipelineRunning() 
 		{
-            foreach (Pipeline pipeline in pipelines)
+            foreach (Pipeline.Pipeline pipeline in pipelines)
             {
 				if (pipeline.IsRunning)
                 {
@@ -54,14 +56,14 @@ namespace AvansOps
 			return commits;
 		}
 
-		public List<Pipeline> GetPipelines()
+		public List<Pipeline.Pipeline> GetPipelines()
 		{
 			return pipelines;
 		}
 
-		public Pipeline GetPipeline(SprintRelease sprint)
+		public Pipeline.Pipeline GetPipeline(SprintRelease sprint)
         {
-            foreach (Pipeline pipeline in pipelines)
+            foreach (Pipeline.Pipeline pipeline in pipelines)
             {
 				if (pipeline.SprintRelease == sprint)
                 {

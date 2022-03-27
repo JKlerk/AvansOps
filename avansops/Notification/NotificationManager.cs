@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using AvansOps;
+using AvansOps.ScrumProject;
+using AvansOps.User;
 
-namespace AvansOps 
+namespace AvansOps.Notification 
 {
 	public static class NotificationManager {
 		

@@ -1,6 +1,6 @@
 using System;
 
-namespace AvansOps 
+namespace AvansOps.TeamReport 
 {
     public class ExportReportPDF : IReportExportStrategy
     {

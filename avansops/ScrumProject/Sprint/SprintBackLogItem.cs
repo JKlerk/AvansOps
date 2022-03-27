@@ -1,6 +1,4 @@
-using System;
-
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Sprint {
 	public class SprintBackLogItem {
 		public int Id { get; }
 

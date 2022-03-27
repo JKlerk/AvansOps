@@ -1,6 +1,4 @@
-using System;
-
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Sprint {
 	public class SetBackLogItemToDone : IStrategyPlaceItem  {
 		private void SetToDone(SprintBackLogItem sprintBackLogItem) {
 			sprintBackLogItem.BackLogItem.SetToDone();

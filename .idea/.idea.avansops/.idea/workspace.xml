@@ -2,120 +2,145 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6718e955-b6dd-4c45-8157-a0e62526edf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/EmailNotification.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/INotificationStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/NotificationEmailProxy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/NotificationManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/NotificationSlackProxy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/SlackAdapter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/SlackNotification.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Notification/SlackService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/BackLogItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/BackLogItemActivity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Project.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/ProjectFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/ProjectMember.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Commit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/IPipelinePhase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/IPipelinePhaseSubscriber.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/Pipeline.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelineFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseAnalyse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseBuild.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseDeploy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhasePackage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Pipeline/PipelinePhaseUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Repository/Repository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/NotifyRole.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SetBackLogItemToDone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/Sprint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintBackLogItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintPhase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/SprintType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Sprint/StrategyPlaceItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/Thread.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/ScrumProject/ThreadMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/ExportReportPDF.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/ExportReportPNG.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/IReportExportStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/TeamReport.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/TeamReport/TeamReportGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/Tests/UnitTest1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/User/Role.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AvansOps1/User/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/EmailNotification.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/INotificationStrategy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/NotificationEmailProxy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/NotificationManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/NotificationSlackProxy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/SlackAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/SlackNotification.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Notification/SlackService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/BackLogItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/BackLogItemActivity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Project.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/ProjectFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/ProjectMember.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Commit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/IPipelinePhase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/IPipelinePhaseSubscriber.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/Pipeline.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelineFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseAnalyse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseBuild.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseDeploy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhasePackage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseUtility.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Repository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/NotifyRole.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SetBackLogItemToDone.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/Sprint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintBackLogItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintPhase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/StrategyPlaceItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Thread.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/ThreadMessage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/ExportReportPDF.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/ExportReportPNG.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/IReportExportStrategy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/TeamReport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/TeamReportGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/UnitTest1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/User/Role.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/User/User.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/avansops.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net6.0/avansops.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/avansops.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/avansops.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/avansops.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/project.assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/project.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/project.packagespec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/obj/rider.project.restore.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/AvansOps.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/ScrumProject/ProjectMember.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/ScrumProject/ProjectMember.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/BacklogItem/TC_BacklogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/BacklogItem/TC_BacklogItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/BacklogItem/TC_BacklogItemActivity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/BacklogItem/TC_BacklogItemActivity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/BacklogItem/TC_SprintBacklogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/BacklogItem/TC_SprintBacklogItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Pipeline/TC_AddPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Pipeline/TC_AddPhase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Pipeline/TC_Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Pipeline/TC_Run.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddBackLogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddBackLogItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddBackLogItemToSprintBackLog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddBackLogItemToSprintBackLog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddPhase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddSprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_AddSprint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_MoveSprintBackLogItemToPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Project/TC_MoveSprintBackLogItemToPhase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Repository/TC_Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Repository/TC_Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Sprint/TC_AddProjectMember.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Sprint/TC_AddProjectMember.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Sprint/TC_Cancel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Sprint/TC_Cancel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Sprint/TC_RemoveProjectMember.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Sprint/TC_RemoveProjectMember.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/SprintPhase/TC_AddStrategyPlaceItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/SprintPhase/TC_AddStrategyPlaceItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/SprintPhase/TC_PlaceItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/SprintPhase/TC_PlaceItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/SprintPhase/TC_RemoveItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/SprintPhase/TC_RemoveItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/TeamReportGenerator/TC_GenerateReport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/TeamReportGenerator/TC_GenerateReport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Thread/TC_Thread.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/TestCases/Thread/TC_Thread.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/UseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/UseCaseTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps1.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps1.sln.DotSettings.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/AvansOps.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/AvansOps.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/AvansOps.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/AvansOps.runtimeconfig.dev.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/AvansOps.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.TestPlatform.CommunicationUtilities.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.TestPlatform.CoreUtilities.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.TestPlatform.CrossPlatEngine.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.TestPlatform.PlatformAbstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.TestPlatform.Utilities.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.VisualStudio.TestPlatform.Common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/Newtonsoft.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/NuGet.Frameworks.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ref/AvansOps.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/testhost.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/testhost.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/xunit.abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/xunit.assert.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/xunit.core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/xunit.execution.dotnet.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/xunit.runner.reporters.netcoreapp10.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/xunit.runner.utility.netcoreapp10.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/bin/Debug/net5.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/AvansOps1.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/AvansOps1.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/AvansOps1.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps1.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps1.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps1.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps1.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/AvansOps1.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/Debug/net5.0/ref/AvansOps.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avansops/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26t0tYQBpUuHv26CJ4zFRqaNU22" />
   <component name="ProjectViewState">
@@ -138,6 +163,8 @@
       <option name="presentableId" value="Default" />
       <updated>1648227791618</updated>
       <workItem from="1648227794522" duration="7000" />
+      <workItem from="1648404374738" duration="40000" />
+      <workItem from="1648404429761" duration="48000" />
     </task>
     <servers />
   </component>
@@ -145,8 +172,19 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

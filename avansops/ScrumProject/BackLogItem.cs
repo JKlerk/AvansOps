@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AvansOps.ScrumProject.Sprint;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject {
 	public class BackLogItem {
 		public int Id { get; }
 		private string name;

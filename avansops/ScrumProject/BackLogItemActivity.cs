@@ -1,6 +1,4 @@
-using System;
-
-namespace AvansOps {
+namespace AvansOps.ScrumProject {
 	public class BackLogItemActivity {
 		private int id;
 		private string name;

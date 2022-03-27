@@ -1,6 +1,6 @@
 using System;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject {
 	public class ThreadMessage {
 		public int Id { get; }
 		private string message;

@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AvansOps.Notification;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 using Xunit;
 
-namespace AvansOps
+namespace AvansOps.Tests.TestCases.Sprint
 {
     public class TC_RemoveProjectMember
     {
         [Fact]
         public void Test2()
         {
-            User user = new User("testFirst", "testLast", "test@test.com");
+            User.User user = new User.User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
-            User userDeveloper = new User("dev", "test", "test@test.com");
+            User.User userDeveloper = new User.User("dev", "test", "test@test.com");
             ProjectMember developer = new ProjectMember(userDeveloper, new List<Role>() { Role.Developer }, new NotificationEmailProxy());
 
             sprint.AddProjectMember(developer);
@@ -30,13 +31,13 @@ namespace AvansOps
         [Fact]
         public void Test1()
         {
-            User user = new User("testFirst", "testLast", "test@test.com");
+            User.User user = new User.User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
-            User userDeveloper = new User("dev", "test", "test@test.com");
+            User.User userDeveloper = new User.User("dev", "test", "test@test.com");
             ProjectMember developer = new ProjectMember(userDeveloper, new List<Role>() { Role.Developer }, new NotificationEmailProxy());
 
             try
@@ -53,11 +54,11 @@ namespace AvansOps
         [Fact]
         public void Test3()
         {
-            User user = new User("testFirst", "testLast", "test@test.com");
+            User.User user = new User.User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
             try
             {

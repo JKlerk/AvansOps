@@ -1,6 +1,6 @@
 using System;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Repository.Pipeline {
 	public class PipelinePhaseAnalyse : PipelinePhase  {
 		protected override void Finish()
 		{

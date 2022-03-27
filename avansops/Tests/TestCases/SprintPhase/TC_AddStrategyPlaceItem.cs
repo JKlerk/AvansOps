@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using AvansOps.Notification;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 using Xunit;
 
-namespace AvansOps
+namespace AvansOps.Tests.TestCases.SprintPhase
 {
     public class TC_AddStrategyPlaceItem
     {
         [Fact]
         public void Test1()
         {
-            User user = new User("testFirst", "testLast", "test@test.com");
+            User.User user = new User.User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            SprintPhase phase = new SprintPhase(999, "TestPhase", new List<Role>() { Role.ScrumMaster });
+            ScrumProject.Sprint.SprintPhase phase = new ScrumProject.Sprint.SprintPhase(999, "TestPhase", new List<Role>() { Role.ScrumMaster });
             project.AddPhase(phase);
 
             phase.AddStrategyPlaceItem(new NotifyRole(new List<Role>() { Role.ScrumMaster }, project, "test"));

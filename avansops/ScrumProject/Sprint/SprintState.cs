@@ -1,6 +1,4 @@
-using System;
-
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Sprint {
 	public enum SprintState {
 		Canceled,
 		Finished,

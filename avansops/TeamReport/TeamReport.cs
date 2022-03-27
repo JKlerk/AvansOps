@@ -1,7 +1,8 @@
-using System;
 using System.Collections.Generic;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
 
-namespace AvansOps {
+namespace AvansOps.TeamReport {
 	public class TeamReport 
 	{
 		public Project Project { get; }

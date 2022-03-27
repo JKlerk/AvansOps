@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using AvansOps.Notification;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 using Xunit;
 
 namespace AvansOps.Tests.TestCases.BacklogItem
@@ -24,7 +27,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
         public void Test_ProjectMembers()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Description");
             backlogItem.SetProjectMember(member);
             Assert.True(backlogItem.GetProjectMember() == member);
@@ -43,8 +46,8 @@ namespace AvansOps.Tests.TestCases.BacklogItem
         {
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Description");
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
-            var thread = new Thread(1, "Thread 1", "Description", member);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var thread = new ScrumProject.Thread(1, "Thread 1", "Description", member);
             backlogItem.AddThread(thread);
             Assert.True(backlogItem.GetThreads().Count == 1);
         }
@@ -54,7 +57,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
         {
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Description");
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             backlogItem.CreateActivity("New Activity", "Description", member);
             backlogItem.CreateActivity("New Activity2", "Description", member);
 
@@ -68,7 +71,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
             Assert.False(backlogItem.IsBoundToSprint());
             
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);

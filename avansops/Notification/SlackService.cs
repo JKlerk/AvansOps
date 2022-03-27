@@ -1,6 +1,6 @@
 using System;
 
-namespace AvansOps {
+namespace AvansOps.Notification {
 	public class SlackService {
 		public void Send(string msg)
 		{

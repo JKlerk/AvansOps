@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using AvansOps.Notification;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject {
 	public class Thread {
 		private int id;
 		private readonly string name;

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using AvansOps.Notification;
+using AvansOps.ScrumProject;
+using AvansOps.User;
 using Xunit;
 
 namespace AvansOps.Tests.TestCases.BacklogItem
@@ -11,7 +13,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
         {
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Description");
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             backlogItem.CreateActivity("New Activity", "Description", member);
             Assert.True(backlogItem.GetBackLogItemActivities().Count == 1);
             var activity = backlogItem.GetBackLogItemActivities()[0];
@@ -25,7 +27,7 @@ namespace AvansOps.Tests.TestCases.BacklogItem
         {
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Description");
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             backlogItem.CreateActivity("New Activity", "Description", member);
             var activity = backlogItem.GetBackLogItemActivities()[0];
             activity.SetActivityDone();

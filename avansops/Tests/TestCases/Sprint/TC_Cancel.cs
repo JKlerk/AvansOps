@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AvansOps.Notification;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 using Xunit;
 
-namespace AvansOps
+namespace AvansOps.Tests.TestCases.Sprint
 {
     public class TC_Cancel
     {
         [Fact]
         public void Test1()
         {
-            User user = new User("testFirst", "testLast", "test@test.com");
+            User.User user = new User.User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
-            Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
+            ScrumProject.Sprint.Sprint sprint = project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
 
             sprint.Cancel();
 
@@ -26,9 +27,9 @@ namespace AvansOps
         [Fact]
         public void Test2()
         {
-            User user = new User("testFirst", "testLast", "test@test.com");
+            User.User user = new User.User("testFirst", "testLast", "test@test.com");
             ProjectMember projectMember = new ProjectMember(user, new List<Role>() { Role.ScrumMaster }, new NotificationEmailProxy());
-            Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
+            ScrumProject.Project project = ProjectFactory.CreateProject(0, "TestProject", "TestDescription", projectMember);
 
             SprintReview sprint = (SprintReview)project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddMonths(1), projectMember);
             sprint.UploadReviewDoc(new ReviewDoc("goodreview"));

@@ -1,4 +1,4 @@
-namespace AvansOps 
+namespace AvansOps.TeamReport 
 {
 	public interface IReportExportStrategy 
 	{

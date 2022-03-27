@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace AvansOps 
+namespace AvansOps.ScrumProject.Repository.Pipeline 
 {
 	public abstract class PipelinePhase 
 	{

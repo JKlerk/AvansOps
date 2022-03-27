@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using AvansOps;
+using AvansOps.ScrumProject;
 
 namespace AvansOps.Notification {
 	public class NotificationSlackProxy : INotificationStrategy

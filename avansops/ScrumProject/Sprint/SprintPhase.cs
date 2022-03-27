@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using AvansOps.User;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Sprint {
 	public class SprintPhase {
 		public int Id { get; }
 		public string Name { get; }

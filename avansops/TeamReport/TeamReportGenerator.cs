@@ -1,6 +1,7 @@
-using System;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
 
-namespace AvansOps 
+namespace AvansOps.TeamReport 
 {
 	public static class TeamReportGenerator 
 	{

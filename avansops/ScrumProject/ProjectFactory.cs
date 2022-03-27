@@ -1,7 +1,8 @@
-using System;
 using System.Collections.Generic;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 
-namespace AvansOps {
+namespace AvansOps.ScrumProject {
 	public static class ProjectFactory 
 	{
 		public static Project CreateProject(int id, string name, string description, ProjectMember creator) {

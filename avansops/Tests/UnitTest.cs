@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using AvansOps;
 using AvansOps.Notification;
+using AvansOps.ScrumProject;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 using Xunit;
 
 namespace AvansOps.Tests
@@ -12,7 +15,7 @@ namespace AvansOps.Tests
         public void Test_CreateMember()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             Assert.True(member.User.FirstName == "Firstname");
             Assert.True(member.User.LastName == "Lastname");
             Assert.True(member.User.Email == "test@test.com");
@@ -22,7 +25,7 @@ namespace AvansOps.Tests
         public void Test_NotifyMember()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             notificationStrategy.Notify(member, "testMessage");
             Assert.True(notificationStrategy.Messages[0] == "testMessage");
         
@@ -32,7 +35,7 @@ namespace AvansOps.Tests
         public void Test_CreateProject()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
 
             Assert.True(project.Name == "Project 1");
@@ -43,7 +46,7 @@ namespace AvansOps.Tests
         public void Test_SeeIfProjectHasDefaultPhases()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             Assert.True(project.GetPhase("Todo") != null);
             Assert.True(project.GetPhase("Doing") != null);
@@ -57,7 +60,7 @@ namespace AvansOps.Tests
         public void Test_SeeIfTodoPhaseHasNotifyRoleStrategy()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             Assert.True(project.GetPhase("Todo").StrategiesPlaceItem[0].GetType() == typeof(NotifyRole));
         }
@@ -66,7 +69,7 @@ namespace AvansOps.Tests
         public void Test_AddBacklogItemToProjectBacklog()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);
@@ -79,7 +82,7 @@ namespace AvansOps.Tests
         public void Test_AddSprintToProject()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
         
@@ -91,7 +94,7 @@ namespace AvansOps.Tests
         public void Test_MoveBacklogItemToSprintBacklog()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);
@@ -104,7 +107,7 @@ namespace AvansOps.Tests
         public void Test_MoveSprintBacklogItemToOtherFase()
         {
             var notificationStrategy = new NotificationSlackProxy();
-            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var member = new ProjectMember(new User.User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
             var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             project.AddBackLogItem(backlogItem);

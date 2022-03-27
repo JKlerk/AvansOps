@@ -1,6 +1,4 @@
-using System;
-
-namespace AvansOps {
+namespace AvansOps.User {
 	public enum Role {
 		Developer,
 		ScrumMaster,

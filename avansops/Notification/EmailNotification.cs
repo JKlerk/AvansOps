@@ -1,7 +1,7 @@
 using System;
-using AvansOps.Notification;
+using AvansOps.ScrumProject;
 
-namespace AvansOps
+namespace AvansOps.Notification
 {
 	public class EmailNotification : INotificationStrategy  {
 		

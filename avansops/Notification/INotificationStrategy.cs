@@ -1,4 +1,5 @@
 using AvansOps;
+using AvansOps.ScrumProject;
 
 namespace AvansOps.Notification {
 	public abstract class INotificationStrategy

@@ -1,7 +1,9 @@
-using System;
 using System.Collections.Generic;
+using AvansOps.Notification;
+using AvansOps.ScrumProject.Sprint;
+using AvansOps.User;
 
-namespace AvansOps 
+namespace AvansOps.ScrumProject.Repository.Pipeline 
 {
     public class Pipeline : IPipelinePhaseSubscriber
     {

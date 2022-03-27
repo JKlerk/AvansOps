@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
-using AvansOps.Notification;
+using AvansOps.ScrumProject;
 
-namespace AvansOps 
+namespace AvansOps.Notification 
 {
 	public class NotificationEmailProxy : INotificationStrategy  {
 		

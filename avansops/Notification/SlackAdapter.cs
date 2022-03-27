@@ -1,6 +1,4 @@
-using AvansOps;
-
-namespace AvansOps
+namespace AvansOps.Notification
 {
 	public class SlackAdapter {
 		private readonly SlackService slackService;

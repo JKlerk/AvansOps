@@ -1,6 +1,4 @@
-using System;
-
-namespace AvansOps {
+namespace AvansOps.ScrumProject.Repository.Pipeline {
 	public interface IPipelinePhaseSubscriber 
 	{
 		public void Finish();

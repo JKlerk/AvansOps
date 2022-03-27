@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AvansOps.Notification;
+using AvansOps.User;
 
-namespace AvansOps 
+namespace AvansOps.ScrumProject.Sprint 
 {
 	public abstract class Sprint
 	{
