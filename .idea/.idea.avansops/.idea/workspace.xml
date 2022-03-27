@@ -2,92 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6718e955-b6dd-4c45-8157-a0e62526edf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/Commit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/IPipelinePhaseSubscriber.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/Pipeline.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelineFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhaseAnalyse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhaseBuild.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhaseDeploy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhaseFail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhasePackage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhaseTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/PipelineScrum/PipelinePhaseUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/RepositoryScrum/Repository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/IStrategyCanPlaceItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/IStrategyPlaceItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/NotifyRole.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/ReviewDoc.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SetBackLogItemToDone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/Sprint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SprintBackLogItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SprintFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SprintPhase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SprintRelease.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SprintReview.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SprintState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/SprintType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/ScrumProject/SprintScrum/StrategyCanPlaceItemMustBeDone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/TeamReportScrum/ExportReportPDF.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/TeamReportScrum/ExportReportPNG.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/TeamReportScrum/IReportExportStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/TeamReportScrum/TeamReport.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/TeamReportScrum/TeamReportElement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avansops/TeamReportScrum/TeamReportGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.avansops/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/ProjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/ScrumProject/ProjectFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Commit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/IPipelinePhaseSubscriber.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/Pipeline.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelineFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseAnalyse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseBuild.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseDeploy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseFail.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhasePackage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Pipeline/PipelinePhaseUtility.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Repository/Repository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/IStrategyCanPlaceItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/IStrategyPlaceItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/NotifyRole.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/ReviewDoc.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SetBackLogItemToDone.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/Sprint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintBackLogItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintPhase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintRelease.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintReview.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/SprintType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/ScrumProject/Sprint/StrategyCanPlaceItemMustBeDone.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/ExportReportPDF.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/ExportReportPNG.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/IReportExportStrategy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/TeamReport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/TeamReportElement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/TeamReport/TeamReportGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/BacklogItem/TC_BacklogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/BacklogItem/TC_BacklogItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/BacklogItem/TC_SprintBacklogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/BacklogItem/TC_SprintBacklogItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Pipeline/TC_AddPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Pipeline/TC_AddPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Pipeline/TC_Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Pipeline/TC_Run.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_AddBackLogItemToSprintBackLog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_AddBackLogItemToSprintBackLog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_AddPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_AddPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_AddSprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_AddSprint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_MoveSprintBackLogItemToPhase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Project/TC_MoveSprintBackLogItemToPhase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Repository/TC_Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Repository/TC_Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Sprint/TC_AddProjectMember.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Sprint/TC_AddProjectMember.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Sprint/TC_Cancel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Sprint/TC_Cancel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/Sprint/TC_RemoveProjectMember.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/Sprint/TC_RemoveProjectMember.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/SprintPhase/TC_AddStrategyPlaceItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/SprintPhase/TC_AddStrategyPlaceItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/SprintPhase/TC_PlaceItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/SprintPhase/TC_PlaceItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/SprintPhase/TC_RemoveItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/SprintPhase/TC_RemoveItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/TestCases/TeamReportGenerator/TC_GenerateReport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/TestCases/TeamReportGenerator/TC_GenerateReport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/UnitTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/UnitTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avansops/Tests/UseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/avansops/Tests/UseCaseTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvansOps/Tests/UseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvansOps/Tests/UseCaseTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +45,7 @@
       <workItem from="1648404374738" duration="40000" />
       <workItem from="1648404429761" duration="48000" />
       <workItem from="1648404497611" duration="935000" />
-      <workItem from="1648405634937" duration="2194000" />
+      <workItem from="1648405634937" duration="2815000" />
     </task>
     <servers />
   </component>

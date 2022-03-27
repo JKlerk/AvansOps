@@ -488,13 +488,7 @@ namespace AvansOps.Tests
             sprint.ProjectMembers[0].Roles = new List<Role>() {Role.ScrumMaster};
             Assert.True(sprint.ProjectMembers[0].Roles[0] == Role.ScrumMaster);
         }
-        
-        [Fact]
-        public void Test_US_30()
-        {
-            // Check TC_Generate Report
-        }
-        
+
         [Fact]
         public void Test_US_31()
         {
