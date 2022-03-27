@@ -58,5 +58,18 @@ namespace AvansOps
 		{
 			return pipelines;
 		}
+
+		public Pipeline GetPipeline(SprintRelease sprint)
+        {
+            foreach (Pipeline pipeline in pipelines)
+            {
+				if (pipeline.SprintRelease == sprint)
+                {
+					return pipeline;
+                }
+            }
+
+			throw new Exception("No pipeline with given sprint exists");
+        }
 	}
 }

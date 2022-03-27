@@ -1,14 +1,8 @@
 using System;
 
 namespace AvansOps {
-	public class PipelinePhaseTest : IPipelinePhase  {
-		protected override void Error()
-		{
-			base.Error();
-
-			Console.WriteLine("Pipeline phase Test has encountered an error");
-		}
-
+	public class PipelinePhaseTest : PipelinePhase  
+	{
 		protected override void Finish()
 		{
 			base.Finish();

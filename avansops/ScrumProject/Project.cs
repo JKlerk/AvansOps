@@ -110,8 +110,14 @@ namespace AvansOps {
 
 		public void StartPipelineCurrentSprint()
 		{
-			var repo = GetRepository();
-			repo.RunPipeline(GetCurrentSprint());
+			Sprint currentSprint = GetCurrentSprint();
+
+			if (currentSprint.SprintState != SprintState.OnGoing)
+            {
+				throw new Exception("Sprint is already closed");
+            }
+
+			repository.RunPipeline(currentSprint);
 		}
 	}
 }
