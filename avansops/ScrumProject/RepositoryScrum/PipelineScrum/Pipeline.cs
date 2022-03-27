@@ -33,6 +33,7 @@ namespace AvansOps.ScrumProject.RepositoryScrum.PipelineScrum
 
 		private void StartPhase(int index) 
 		{
+			Phases[index].Subscribe(this);
 			Phases[index].TemplateMethod();
 		}
 
@@ -56,19 +57,20 @@ namespace AvansOps.ScrumProject.RepositoryScrum.PipelineScrum
 			SprintRelease.FinishPipeline();
 		}
 
-        void IPipelinePhaseSubscriber.Finish()
+        void IPipelinePhaseSubscriber.Finish(PipelinePhase phase)
         {
+			phase.UnSubscribe(this);
 			AdvancePhase();
 		}
 
         public void AddPhase(PipelinePhase phase)
         {
 			Phases.Add(phase);
-			phase.Subscribe(this);
 		}
 
-        void IPipelinePhaseSubscriber.Error(string message)
+        void IPipelinePhaseSubscriber.Error(PipelinePhase phase, string message)
         {
+			phase.UnSubscribe(this);
 			IsRunning = false;
 			NotificationManager.Notify(new List<Role>() { Role.ScrumMaster }, repository.Project, "Pipeline has failed: " + message);
 		}

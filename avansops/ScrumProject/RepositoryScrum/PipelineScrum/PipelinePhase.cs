@@ -18,6 +18,11 @@ namespace AvansOps.ScrumProject.RepositoryScrum.PipelineScrum
 			subscribers.Add(pipelinePhaseSubscriber);
         }
 
+		public void UnSubscribe(IPipelinePhaseSubscriber pipelinePhaseSubscriber)
+        {
+			subscribers.Remove(pipelinePhaseSubscriber);
+		}
+
 		public void TemplateMethod() 
 		{
             try
@@ -47,7 +52,7 @@ namespace AvansOps.ScrumProject.RepositoryScrum.PipelineScrum
         {
 			for (int i = 0; i < subscribers.Count; i++)
 			{
-				subscribers[i].Finish();
+				subscribers[i].Finish(this);
 			}
 		}
 
@@ -55,7 +60,7 @@ namespace AvansOps.ScrumProject.RepositoryScrum.PipelineScrum
         {
 			for (int i = 0; i < subscribers.Count; i++)
 			{
-				subscribers[i].Error(exception.Message);
+				subscribers[i].Error(this, exception.Message);
 			}
 		}
 	}
