@@ -37,15 +37,8 @@ namespace AvansOps
 
 		public void Finish()
         {
-			if (SprintState == SprintState.OnGoing)
-            {
-				SprintState = SprintState.Finished;
-            }
-			else
-            {
-				throw new Exception("Sprint is already closed!");
-			}
-		}
+	        SprintState = SprintState.Finished;
+        }
 
 		public SprintBackLogItem AddSprintBacklogItem(BackLogItem backLogItem)
 		{

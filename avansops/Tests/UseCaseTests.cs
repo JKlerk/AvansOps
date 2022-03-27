@@ -60,6 +60,7 @@ namespace AvansOps.Tests
             var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
             var sprint = project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
             Assert.True(project.GetCurrentSprint() == sprint);
+            Assert.True(project.GetCurrentSprint().Id == sprint.Id);
         }
         
         [Fact]
@@ -188,7 +189,7 @@ namespace AvansOps.Tests
             project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddDays(2), member);
             Assert.Throws<Exception>(() =>  project.StartPipelineCurrentSprint());
         }
-        
+
         [Fact]
         public void Test_US_12()
         {
@@ -533,6 +534,71 @@ namespace AvansOps.Tests
             var sprintBackLogItem = project.AddBackLogItemToSprintBackLog(backlogItem, sprint);
             Assert.Throws<Exception>(() => sprintBackLogItem.BackLogItem.SetDescription("Hello I need help"));
             Assert.Throws<Exception>(() => sprintBackLogItem.BackLogItem.SetName("Hello I need help"));
+        }
+        
+        [Fact]
+        public void Test_US_35()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+            backlogItem.CreateActivity("Activity 1", "Description", member);
+
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            Assert.True(project.SprintPhases[0].Name == "Todo");
+            Assert.True(project.SprintPhases[1].Name == "Doing");
+            Assert.True(project.SprintPhases[2].Name == "Ready for testing");
+            Assert.True(project.SprintPhases[3].Name == "Testing");
+            Assert.True(project.SprintPhases[4].Name == "Tested and done");
+        }
+
+        [Fact]
+        public void Test_US_36()
+        {
+            // TODO: Add notification on threadmessage post
+        }
+
+        [Fact]
+        public void Test_US_37()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            var thread = new Thread(1, "Thread name", "Description", member);
+            backlogItem.AddThread(thread);
+            backlogItem.AddThread(thread);
+            backlogItem.AddThread(thread);
+            Assert.True(backlogItem.GetThreads().Count == 3);
+        }
+        
+        [Fact]
+        public void Test_US_38()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+            var backlogItem = new BackLogItem(1, "Backlogitem 1", "Doe deze stuff");
+        
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            project.AddBackLogItem(backlogItem);
+            backlogItem.SetToDone();
+            var thread = new Thread(1, "Thread name", "Description", member);
+            Assert.Throws<Exception>(() =>  backlogItem.AddThread(thread));
+        }
+        
+        [Fact]
+        public void Test_US_39()
+        {
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() {Role.Developer, Role.ScrumMaster}, notificationStrategy);
+
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            var repo = project.GetRepository();
+            repo.Commit(new Commit(DateTime.Now, "My new commit", member));
         }
     }
 }

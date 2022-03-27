@@ -37,6 +37,8 @@ namespace AvansOps.Tests
 
             Assert.NotNull(report);
             Assert.True(report.Elements.Count == 3);
+            Assert.True(report.Elements[0].ImageUrls != null);
+            Assert.True(report.Lines != null);
         }
     }
 }
