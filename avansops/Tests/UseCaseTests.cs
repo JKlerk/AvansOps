@@ -209,7 +209,14 @@ namespace AvansOps.Tests
         [Fact]
         public void Test_US_13()
         {
-            // TODO: Upload
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() { Role.ScrumMaster }, notificationStrategy);
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            SprintReview sprint = (SprintReview)project.AddSprint(SprintType.Review, DateTime.Now, DateTime.Now.AddDays(2), member);
+
+            sprint.UploadReviewDoc(new ReviewDoc("test"));
+
+            Assert.True(sprint.SprintState == SprintState.Finished);
         }
         
         [Fact]
