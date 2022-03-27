@@ -7,7 +7,7 @@ namespace AvansOps {
 		{
 			Pipeline pipeLine = new Pipeline(repository, sprint);
 
-			List<IPipelinePhase> phases = new List<IPipelinePhase>()
+			List<PipelinePhase> phases = new List<PipelinePhase>()
 			{
 				new PipelinePhasePackage(),
 				new PipelinePhaseBuild(),
@@ -20,7 +20,6 @@ namespace AvansOps {
 			foreach (var phase in phases)
 			{
 				pipeLine.AddPhase(phase);
-				phase.Subscribe(pipeLine);
 			}
 			
 			return pipeLine;

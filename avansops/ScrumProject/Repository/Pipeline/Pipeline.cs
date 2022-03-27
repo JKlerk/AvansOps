@@ -6,7 +6,7 @@ namespace AvansOps
     public class Pipeline : IPipelinePhaseSubscriber
     {
 		private Repository repository;
-		private List<IPipelinePhase> phases;
+		private List<PipelinePhase> phases;
 		public SprintRelease SprintRelease { get; }
 		public bool IsFinished { get; private set; }
 
@@ -17,7 +17,7 @@ namespace AvansOps
 		public Pipeline(Repository repository, SprintRelease sprintRelease)
 		{
 			this.repository = repository;
-			phases = new List<IPipelinePhase>();
+			phases = new List<PipelinePhase>();
 			SprintRelease = sprintRelease;
 		}
 
@@ -58,14 +58,15 @@ namespace AvansOps
 			AdvancePhase();
 		}
 
-        public void AddPhase(IPipelinePhase phase)
+        public void AddPhase(PipelinePhase phase)
         {
 	        phases.Add(phase);
-        }
+			phase.Subscribe(this);
+		}
 
         void IPipelinePhaseSubscriber.Error(string message)
         {
-			Console.WriteLine(message);
+			NotificationManager.Notify(new List<Role>() { Role.ScrumMaster }, repository.Project, "Pipeline has failed: " + message);
 		}
 	}
 }

@@ -170,7 +170,17 @@ namespace AvansOps.Tests
         [Fact]
         public void Test_US_12()
         {
-            // TODO: Test if pipeline fail
+            var notificationStrategy = new NotificationSlackProxy();
+            var member = new ProjectMember(new User("Firstname", "Lastname", "test@test.com"), new List<Role>() { Role.ScrumMaster }, notificationStrategy);
+            var project = ProjectFactory.CreateProject(1, "Project 1", "description of project", member);
+            SprintRelease sprint = (SprintRelease)project.AddSprint(SprintType.Release, DateTime.Now, DateTime.Now.AddDays(2), member);
+            Pipeline pipeline = project.GetRepository().GetPipeline(sprint);
+            pipeline.AddPhase(new PipelinePhaseFail());
+            
+            project.StartPipelineCurrentSprint();
+
+            Assert.False(pipeline.IsFinished);
+            Assert.True(notificationStrategy.Messages[0] == "Pipeline has failed: Forced fail");
         }
 
         [Fact]

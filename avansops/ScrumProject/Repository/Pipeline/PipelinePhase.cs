@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace AvansOps 
 {
-	public abstract class IPipelinePhase 
+	public abstract class PipelinePhase 
 	{
 		private List<IPipelinePhaseSubscriber> subscribers;
 		private Pipeline pipeline;
 
-		public IPipelinePhase()
+		public PipelinePhase()
         {
 			subscribers = new List<IPipelinePhaseSubscriber>();
 		}
@@ -27,9 +27,9 @@ namespace AvansOps
 				Finish();
 
 			}
-			catch
+			catch (Exception exception)
             {
-				Error();
+				Error(exception);
 			}
 		}
 
@@ -38,7 +38,7 @@ namespace AvansOps
 
         }
 
-		protected void Hook() 
+		protected virtual void Hook() 
 		{
 			
 		}
@@ -51,11 +51,11 @@ namespace AvansOps
 			}
 		}
 
-		protected virtual void Error()
+		private void Error(Exception exception)
         {
 			for (int i = 0; i < subscribers.Count; i++)
 			{
-				subscribers[i].Error("");
+				subscribers[i].Error(exception.Message);
 			}
 		}
 	}
